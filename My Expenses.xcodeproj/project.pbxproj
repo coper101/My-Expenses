@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2760488D29BDC0F000AB8497 /* My_Expenses.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2760488B29BDC0F000AB8497 /* My_Expenses.xcdatamodeld */; };
+		2760488F29BDE58800AB8497 /* TodaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2760488E29BDE58800AB8497 /* TodaysView.swift */; };
+		2760489329BDE5BA00AB8497 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2760489229BDE5BA00AB8497 /* WeekView.swift */; };
+		2760489529BDE7D800AB8497 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2760489429BDE7D800AB8497 /* Text.swift */; };
 		27A25A6329BDBAB200EC5E0D /* My_ExpensesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A25A6229BDBAB200EC5E0D /* My_ExpensesApp.swift */; };
-		27A25A6529BDBAB200EC5E0D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A25A6429BDBAB200EC5E0D /* Persistence.swift */; };
-		27A25A6829BDBAB200EC5E0D /* My_Expenses.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27A25A6629BDBAB200EC5E0D /* My_Expenses.xcdatamodeld */; };
-		27A25A6A29BDBAB200EC5E0D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A25A6929BDBAB200EC5E0D /* ContentView.swift */; };
 		27A25A6C29BDBAB400EC5E0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27A25A6B29BDBAB400EC5E0D /* Assets.xcassets */; };
-		27A25A7029BDBAB400EC5E0D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27A25A6F29BDBAB400EC5E0D /* Preview Assets.xcassets */; };
 		27A25A7A29BDBAB400EC5E0D /* My_ExpensesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A25A7929BDBAB400EC5E0D /* My_ExpensesTests.swift */; };
 		27A25A8429BDBAB400EC5E0D /* My_ExpensesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A25A8329BDBAB400EC5E0D /* My_ExpensesUITests.swift */; };
 		27A25A8629BDBAB400EC5E0D /* My_ExpensesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A25A8529BDBAB400EC5E0D /* My_ExpensesUITestsLaunchTests.swift */; };
+		27A25A9729BDBB0500EC5E0D /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A25A9629BDBB0500EC5E0D /* AppView.swift */; };
+		27A25A9929BDBB1600EC5E0D /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A25A9829BDBB1600EC5E0D /* AppViewModel.swift */; };
+		27A25A9C29BDBB4F00EC5E0D /* ExpenseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A25A9B29BDBB4F00EC5E0D /* ExpenseRepository.swift */; };
+		27A25A9E29BDBBEC00EC5E0D /* LocalDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A25A9D29BDBBEC00EC5E0D /* LocalDatabase.swift */; };
+		27A25AA029BDBBFE00EC5E0D /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A25A9F29BDBBFE00EC5E0D /* Logger.swift */; };
+		27D6BEE029BDBF0000E3F19D /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D6BEDF29BDBF0000E3F19D /* Expense.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,19 +42,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2760488C29BDC0F000AB8497 /* My_Expenses.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = My_Expenses.xcdatamodel; sourceTree = "<group>"; };
+		2760488E29BDE58800AB8497 /* TodaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysView.swift; sourceTree = "<group>"; };
+		2760489229BDE5BA00AB8497 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
+		2760489429BDE7D800AB8497 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		27A25A5F29BDBAB200EC5E0D /* My Expenses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Expenses.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27A25A6229BDBAB200EC5E0D /* My_ExpensesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_ExpensesApp.swift; sourceTree = "<group>"; };
-		27A25A6429BDBAB200EC5E0D /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		27A25A6729BDBAB200EC5E0D /* My_Expenses.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = My_Expenses.xcdatamodel; sourceTree = "<group>"; };
-		27A25A6929BDBAB200EC5E0D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		27A25A6B29BDBAB400EC5E0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27A25A6D29BDBAB400EC5E0D /* My_Expenses.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = My_Expenses.entitlements; sourceTree = "<group>"; };
-		27A25A6F29BDBAB400EC5E0D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		27A25A7529BDBAB400EC5E0D /* My ExpensesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "My ExpensesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27A25A7929BDBAB400EC5E0D /* My_ExpensesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_ExpensesTests.swift; sourceTree = "<group>"; };
 		27A25A7F29BDBAB400EC5E0D /* My ExpensesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "My ExpensesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27A25A8329BDBAB400EC5E0D /* My_ExpensesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_ExpensesUITests.swift; sourceTree = "<group>"; };
 		27A25A8529BDBAB400EC5E0D /* My_ExpensesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_ExpensesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		27A25A9629BDBB0500EC5E0D /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		27A25A9829BDBB1600EC5E0D /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		27A25A9B29BDBB4F00EC5E0D /* ExpenseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseRepository.swift; sourceTree = "<group>"; };
+		27A25A9D29BDBBEC00EC5E0D /* LocalDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabase.swift; sourceTree = "<group>"; };
+		27A25A9F29BDBBFE00EC5E0D /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		27D6BEDF29BDBF0000E3F19D /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2760489629BDE7E000AB8497 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				2760489429BDE7D800AB8497 /* Text.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
 		27A25A5629BDBAB100EC5E0D = {
 			isa = PBXGroup;
 			children = (
@@ -99,23 +119,16 @@
 		27A25A6129BDBAB200EC5E0D /* My Expenses */ = {
 			isa = PBXGroup;
 			children = (
-				27A25A6229BDBAB200EC5E0D /* My_ExpensesApp.swift */,
-				27A25A6429BDBAB200EC5E0D /* Persistence.swift */,
-				27A25A6929BDBAB200EC5E0D /* ContentView.swift */,
-				27A25A6B29BDBAB400EC5E0D /* Assets.xcassets */,
 				27A25A6D29BDBAB400EC5E0D /* My_Expenses.entitlements */,
-				27A25A6629BDBAB200EC5E0D /* My_Expenses.xcdatamodeld */,
-				27A25A6E29BDBAB400EC5E0D /* Preview Content */,
+				27A25A9429BDBAF000EC5E0D /* App */,
+				27A25A9529BDBAF600EC5E0D /* View */,
+				27A25A9A29BDBB4000EC5E0D /* Data */,
+				27A25A9229BDBAC000EC5E0D /* Model */,
+				27A25A9329BDBAC900EC5E0D /* Resources */,
+				2760489629BDE7E000AB8497 /* Style */,
+				27A25AA129BDBC0000EC5E0D /* Utils */,
 			);
 			path = "My Expenses";
-			sourceTree = "<group>";
-		};
-		27A25A6E29BDBAB400EC5E0D /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				27A25A6F29BDBAB400EC5E0D /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		27A25A7829BDBAB400EC5E0D /* My ExpensesTests */ = {
@@ -133,6 +146,59 @@
 				27A25A8529BDBAB400EC5E0D /* My_ExpensesUITestsLaunchTests.swift */,
 			);
 			path = "My ExpensesUITests";
+			sourceTree = "<group>";
+		};
+		27A25A9229BDBAC000EC5E0D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				27A25A9829BDBB1600EC5E0D /* AppViewModel.swift */,
+				27D6BEDF29BDBF0000E3F19D /* Expense.swift */,
+				2760488B29BDC0F000AB8497 /* My_Expenses.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		27A25A9329BDBAC900EC5E0D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				27A25A6B29BDBAB400EC5E0D /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		27A25A9429BDBAF000EC5E0D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				27A25A6229BDBAB200EC5E0D /* My_ExpensesApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		27A25A9529BDBAF600EC5E0D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				27A25A9629BDBB0500EC5E0D /* AppView.swift */,
+				2760489229BDE5BA00AB8497 /* WeekView.swift */,
+				2760488E29BDE58800AB8497 /* TodaysView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		27A25A9A29BDBB4000EC5E0D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				27A25A9B29BDBB4F00EC5E0D /* ExpenseRepository.swift */,
+				27A25A9D29BDBBEC00EC5E0D /* LocalDatabase.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		27A25AA129BDBC0000EC5E0D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				27A25A9F29BDBBFE00EC5E0D /* Logger.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,7 +305,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27A25A7029BDBAB400EC5E0D /* Preview Assets.xcassets in Resources */,
 				27A25A6C29BDBAB400EC5E0D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,10 +330,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2760488D29BDC0F000AB8497 /* My_Expenses.xcdatamodeld in Sources */,
+				27D6BEE029BDBF0000E3F19D /* Expense.swift in Sources */,
+				2760488F29BDE58800AB8497 /* TodaysView.swift in Sources */,
+				27A25A9E29BDBBEC00EC5E0D /* LocalDatabase.swift in Sources */,
 				27A25A6329BDBAB200EC5E0D /* My_ExpensesApp.swift in Sources */,
-				27A25A6529BDBAB200EC5E0D /* Persistence.swift in Sources */,
-				27A25A6A29BDBAB200EC5E0D /* ContentView.swift in Sources */,
-				27A25A6829BDBAB200EC5E0D /* My_Expenses.xcdatamodeld in Sources */,
+				27A25A9929BDBB1600EC5E0D /* AppViewModel.swift in Sources */,
+				2760489329BDE5BA00AB8497 /* WeekView.swift in Sources */,
+				27A25AA029BDBBFE00EC5E0D /* Logger.swift in Sources */,
+				27A25A9C29BDBB4F00EC5E0D /* ExpenseRepository.swift in Sources */,
+				2760489529BDE7D800AB8497 /* Text.swift in Sources */,
+				27A25A9729BDBB0500EC5E0D /* AppView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +427,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -407,6 +480,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -422,7 +496,7 @@
 				CODE_SIGN_ENTITLEMENTS = "My Expenses/My_Expenses.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"My Expenses/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = KB9D3Y7M29;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -435,9 +509,9 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.6;
@@ -445,10 +519,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.darealreally.My-Expenses";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -460,7 +536,7 @@
 				CODE_SIGN_ENTITLEMENTS = "My Expenses/My_Expenses.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"My Expenses/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = KB9D3Y7M29;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -473,9 +549,9 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.6;
@@ -483,10 +559,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.darealreally.My-Expenses";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -499,16 +577,18 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KB9D3Y7M29;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MACOSX_DEPLOYMENT_TARGET = 12.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.darealreally.My-ExpensesTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/My Expenses.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/My Expenses";
 			};
 			name = Debug;
@@ -522,16 +602,18 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KB9D3Y7M29;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MACOSX_DEPLOYMENT_TARGET = 12.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.darealreally.My-ExpensesTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/My Expenses.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/My Expenses";
 			};
 			name = Release;
@@ -544,7 +626,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KB9D3Y7M29;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MACOSX_DEPLOYMENT_TARGET = 12.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.darealreally.My-ExpensesUITests";
@@ -566,7 +648,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KB9D3Y7M29;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MACOSX_DEPLOYMENT_TARGET = 12.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.darealreally.My-ExpensesUITests";
@@ -622,12 +704,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		27A25A6629BDBAB200EC5E0D /* My_Expenses.xcdatamodeld */ = {
+		2760488B29BDC0F000AB8497 /* My_Expenses.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				27A25A6729BDBAB200EC5E0D /* My_Expenses.xcdatamodel */,
+				2760488C29BDC0F000AB8497 /* My_Expenses.xcdatamodel */,
 			);
-			currentVersion = 27A25A6729BDBAB200EC5E0D /* My_Expenses.xcdatamodel */;
+			currentVersion = 2760488C29BDC0F000AB8497 /* My_Expenses.xcdatamodel */;
 			path = My_Expenses.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

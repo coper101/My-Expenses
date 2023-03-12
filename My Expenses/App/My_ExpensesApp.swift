@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct My_ExpensesApp: App {
-    let persistenceController = PersistenceController.shared
+    @StateObject var appViewModel: AppViewModel = .init()
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            AppView()
+                .environmentObject(appViewModel)
         }
     }
 }

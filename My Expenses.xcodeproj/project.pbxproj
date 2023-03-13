@@ -11,6 +11,13 @@
 		2760488F29BDE58800AB8497 /* TodaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2760488E29BDE58800AB8497 /* TodaysView.swift */; };
 		2760489329BDE5BA00AB8497 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2760489229BDE5BA00AB8497 /* WeekView.swift */; };
 		2760489529BDE7D800AB8497 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2760489429BDE7D800AB8497 /* Text.swift */; };
+		276048CE29BF118D00AB8497 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276048CD29BF118D00AB8497 /* Frame.swift */; };
+		276048D229BF13BA00AB8497 /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276048D129BF13B900AB8497 /* TopBarView.swift */; };
+		276048D429BF13C300AB8497 /* BottomBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276048D329BF13C300AB8497 /* BottomBarView.swift */; };
+		276048D629BF19B200AB8497 /* DayExpenseBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276048D529BF19B200AB8497 /* DayExpenseBoxView.swift */; };
+		276048D829BF1BCE00AB8497 /* WeekExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276048D729BF1BCE00AB8497 /* WeekExpensesView.swift */; };
+		276048DA29BF1D9D00AB8497 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276048D929BF1D9D00AB8497 /* Date.swift */; };
+		276048DC29BF244600AB8497 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276048DB29BF244600AB8497 /* Test.swift */; };
 		27A25A6329BDBAB200EC5E0D /* My_ExpensesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A25A6229BDBAB200EC5E0D /* My_ExpensesApp.swift */; };
 		27A25A6C29BDBAB400EC5E0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27A25A6B29BDBAB400EC5E0D /* Assets.xcassets */; };
 		27A25A7A29BDBAB400EC5E0D /* My_ExpensesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A25A7929BDBAB400EC5E0D /* My_ExpensesTests.swift */; };
@@ -46,6 +53,13 @@
 		2760488E29BDE58800AB8497 /* TodaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysView.swift; sourceTree = "<group>"; };
 		2760489229BDE5BA00AB8497 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		2760489429BDE7D800AB8497 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		276048CD29BF118D00AB8497 /* Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
+		276048D129BF13B900AB8497 /* TopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
+		276048D329BF13C300AB8497 /* BottomBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarView.swift; sourceTree = "<group>"; };
+		276048D529BF19B200AB8497 /* DayExpenseBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayExpenseBoxView.swift; sourceTree = "<group>"; };
+		276048D729BF1BCE00AB8497 /* WeekExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekExpensesView.swift; sourceTree = "<group>"; };
+		276048D929BF1D9D00AB8497 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		276048DB29BF244600AB8497 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		27A25A5F29BDBAB200EC5E0D /* My Expenses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Expenses.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27A25A6229BDBAB200EC5E0D /* My_ExpensesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_ExpensesApp.swift; sourceTree = "<group>"; };
 		27A25A6B29BDBAB400EC5E0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -92,8 +106,27 @@
 			isa = PBXGroup;
 			children = (
 				2760489429BDE7D800AB8497 /* Text.swift */,
+				276048CD29BF118D00AB8497 /* Frame.swift */,
 			);
 			path = Style;
+			sourceTree = "<group>";
+		};
+		276048CF29BF138E00AB8497 /* (1) Today */ = {
+			isa = PBXGroup;
+			children = (
+				2760488E29BDE58800AB8497 /* TodaysView.swift */,
+			);
+			path = "(1) Today";
+			sourceTree = "<group>";
+		};
+		276048D029BF13A100AB8497 /* (2) Week */ = {
+			isa = PBXGroup;
+			children = (
+				2760489229BDE5BA00AB8497 /* WeekView.swift */,
+				276048D529BF19B200AB8497 /* DayExpenseBoxView.swift */,
+				276048D729BF1BCE00AB8497 /* WeekExpensesView.swift */,
+			);
+			path = "(2) Week";
 			sourceTree = "<group>";
 		};
 		27A25A5629BDBAB100EC5E0D = {
@@ -124,9 +157,9 @@
 				27A25A9529BDBAF600EC5E0D /* View */,
 				27A25A9A29BDBB4000EC5E0D /* Data */,
 				27A25A9229BDBAC000EC5E0D /* Model */,
-				27A25A9329BDBAC900EC5E0D /* Resources */,
 				2760489629BDE7E000AB8497 /* Style */,
 				27A25AA129BDBC0000EC5E0D /* Utils */,
+				27A25A9329BDBAC900EC5E0D /* Resources */,
 			);
 			path = "My Expenses";
 			sourceTree = "<group>";
@@ -178,8 +211,10 @@
 			isa = PBXGroup;
 			children = (
 				27A25A9629BDBB0500EC5E0D /* AppView.swift */,
-				2760489229BDE5BA00AB8497 /* WeekView.swift */,
-				2760488E29BDE58800AB8497 /* TodaysView.swift */,
+				276048D129BF13B900AB8497 /* TopBarView.swift */,
+				276048D329BF13C300AB8497 /* BottomBarView.swift */,
+				276048CF29BF138E00AB8497 /* (1) Today */,
+				276048D029BF13A100AB8497 /* (2) Week */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,6 +224,7 @@
 			children = (
 				27A25A9B29BDBB4F00EC5E0D /* ExpenseRepository.swift */,
 				27A25A9D29BDBBEC00EC5E0D /* LocalDatabase.swift */,
+				276048DB29BF244600AB8497 /* Test.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -197,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				27A25A9F29BDBBFE00EC5E0D /* Logger.swift */,
+				276048D929BF1D9D00AB8497 /* Date.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -335,11 +372,18 @@
 				2760488F29BDE58800AB8497 /* TodaysView.swift in Sources */,
 				27A25A9E29BDBBEC00EC5E0D /* LocalDatabase.swift in Sources */,
 				27A25A6329BDBAB200EC5E0D /* My_ExpensesApp.swift in Sources */,
+				276048D429BF13C300AB8497 /* BottomBarView.swift in Sources */,
+				276048DA29BF1D9D00AB8497 /* Date.swift in Sources */,
 				27A25A9929BDBB1600EC5E0D /* AppViewModel.swift in Sources */,
+				276048D829BF1BCE00AB8497 /* WeekExpensesView.swift in Sources */,
 				2760489329BDE5BA00AB8497 /* WeekView.swift in Sources */,
 				27A25AA029BDBBFE00EC5E0D /* Logger.swift in Sources */,
+				276048DC29BF244600AB8497 /* Test.swift in Sources */,
+				276048D229BF13BA00AB8497 /* TopBarView.swift in Sources */,
 				27A25A9C29BDBB4F00EC5E0D /* ExpenseRepository.swift in Sources */,
+				276048CE29BF118D00AB8497 /* Frame.swift in Sources */,
 				2760489529BDE7D800AB8497 /* Text.swift in Sources */,
+				276048D629BF19B200AB8497 /* DayExpenseBoxView.swift in Sources */,
 				27A25A9729BDBB0500EC5E0D /* AppView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

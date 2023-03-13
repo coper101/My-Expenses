@@ -15,6 +15,7 @@ struct My_ExpensesApp: App {
         WindowGroup {
             AppView()
                 .environmentObject(appViewModel)
+                .preferredColorScheme(.light)
         }
     }
 }

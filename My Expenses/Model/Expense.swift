@@ -7,7 +7,14 @@
 
 import CoreData
 
-public class Expense: NSManagedObject {
+protocol ExpenseType {
+    var date: Date? { get set }
+    var name: String? { get set }
+    var price: Double { get set }
+}
+
+// MARK: - Core Data
+public class Expense: NSManagedObject, ExpenseType {
     
     // properties are generated automatically
     // matches the properties from the Entity Table
@@ -25,13 +32,21 @@ public class Expense: NSManagedObject {
         self.name = name ?? ""
         self.price = price ?? 0
     }
-
 }
 
-func createFakeExpense(
-    date: Date? = nil,
-    name: String? = nil,
-    price: Double? = 0
-) -> Expense {
-    .init(date, name, price)
+// MARK: - Test Data
+class FakeExpense: ExpenseType, Identifiable {
+    var date: Date?
+    var name: String?
+    var price: Double
+    
+    init(
+        _ date: Date? = nil,
+        _ name: String? = nil,
+        _ price: Double
+    ) {
+        self.date = date
+        self.name = name
+        self.price = price
+    }
 }

@@ -29,6 +29,18 @@ extension Date {
         return "\(weekFormat) \(weekNumber)"
     }
     
+    func toDayMonthYearFormat() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        return dateFormatter.string(from: self)
+    }
+    
+    func toTimeFormat() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "H:mm"
+        return dateFormatter.string(from: self)
+    }
+    
     func getWeekday() -> Int {
         self.toDateComp().weekday!
     }

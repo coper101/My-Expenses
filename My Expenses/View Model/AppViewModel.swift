@@ -9,20 +9,16 @@ import Combine
 
 final class AppViewModel: ObservableObject {
     
-    let expenseRepository: ExpenseType
+    let expenseRepository: ExpenseRepositoryType
     
     // MARK: Data
-    @Published var weekExpenses: [WeekExpense] = TestData.sampleWeekExpenses
+    @Published var weekExpenses: [WeekExpense] = []
     
     // MARK: UI
     @Published var selectedTab: TabItem = .today
 
-    init(
-        expenseRepository: ExpenseType = ExpenseRepository()
-    ) {
+    init(expenseRepository: ExpenseRepositoryType = ExpenseRepository()) {
         self.expenseRepository = expenseRepository
     }
-    
-    
     
 }

@@ -7,24 +7,20 @@
 
 import SwiftUI
 
-struct WeekExpense {
-    let dateInterval: DateInterval
-    let dayExpenses: [DayExpense]
-}
-
 struct WeekView: View {
     // MARK: - Props
-    @EnvironmentObject var appViewModel: AppViewModel
+    private let viewModel: WeekViewModel
+    
+    init(expenseRepository: ExpenseRepositoryType) {
+        self.viewModel = .init(expenseRepository: expenseRepository)
+    }
     
     // MARK: - UI
     var body: some View {
         VStack(spacing: 45) {
             
-            ForEach(appViewModel.weekExpenses, id: \.dateInterval) { weekExpense in
-                WeekExpensesView(
-                    monthAndWeekFormat: "Feb, Week 1",
-                    dayExpenses: weekExpense.dayExpenses
-                )
+            ForEach(viewModel.weekExpenses, id: \.dateInterval) {
+                WeekExpensesView(weekExpense: $0)
             }
            
         } //: VStack
@@ -37,7 +33,7 @@ struct WeekView: View {
 // MARK: - Preview
 struct WeekView_Previews: PreviewProvider {
     static var previews: some View {
-        WeekView()
+        WeekView(expenseRepository: TestData.repository)
             .previewLayout(.sizeThatFits)
             .environmentObject(AppViewModel())
     }

@@ -7,33 +7,30 @@
 
 import SwiftUI
 
-struct DayExpense {
-    let date: Date
-    let items: [Expense]
+struct WeekExpensesViewModel {
     
-    var day: Day {
-        Day(rawValue: date.getWeekday()) ?? .sun
+    let weekExpense: WeekExpense
+    
+    init(_ weekExpense: WeekExpense) {
+        self.weekExpense = weekExpense
     }
     
-    var displayedCount: String {
-        "\(items.count) Items"
+    var dayExpenses: [DayExpense] {
+        weekExpense.dayExpenses
+            .sorted(by: { $0.date < $1.date })
     }
     
-    var totalPrice: Double {
-        items
-            .map(\.price)
-            .reduce(0) { $0 + $1 }
+    var header: String {
+        "Week"
     }
-    
 }
 
 struct WeekExpensesView: View {
     // MARK: - Props
-    var monthAndWeekFormat: String
-    var dayExpenses: [DayExpense]
+    private let viewModel: WeekExpensesViewModel
     
-    var sortedDayExpenses: [DayExpense] {
-        dayExpenses.sorted(by: { $0.date > $1.date })
+    init(weekExpense: WeekExpense) {
+        self.viewModel = .init(weekExpense)
     }
     
     let spaceInBetween: CGFloat = 14
@@ -42,8 +39,8 @@ struct WeekExpensesView: View {
     var body: some View {
         VStack(spacing: 20) {
             
-            // HEADER
-            Text(monthAndWeekFormat)
+            // MARK: Header
+            Text(viewModel.header)
                 .textStyle(
                     foregroundColor: .black,
                     fontWeight: .semibold,
@@ -51,7 +48,7 @@ struct WeekExpensesView: View {
                 )
                 .fillMaxWidth(alignment: .leading)
             
-            // ITEMS
+            // MARK: Weeks
             GeometryReader { geometry in
                 
                 let itemWidth = (geometry.size.width - (spaceInBetween * 2)) / 3
@@ -64,14 +61,12 @@ struct WeekExpensesView: View {
                         ),
                     spacing: spaceInBetween
                 ) {
-                    ForEach(sortedDayExpenses, id: \.date) { dayExpense in
+                    ForEach(viewModel.dayExpenses, id: \.date) {
                         DayExpenseBoxView(
-                            width: itemWidth,
-                            day: dayExpense.day,
-                            price: dayExpense.totalPrice,
-                            itemsCount: dayExpense.items.count
+                            dayExpense: $0,
+                            width: itemWidth
                         )
-                    } //: ForEach
+                    }
                 }
             } //: GeometryReader
             .frame(height: itemsHeight)
@@ -82,7 +77,7 @@ struct WeekExpensesView: View {
     // MARK: - Actions
     var itemsHeight: CGFloat {
         let itemsHeight = UIScreen.main.bounds.width / 3
-        let itemsCount = CGFloat(dayExpenses.count)
+        let itemsCount = CGFloat(viewModel.dayExpenses.count)
         if (itemsCount > 5) {
             return 3 * itemsHeight
         } else if (itemsCount > 3) {
@@ -97,12 +92,10 @@ struct WeekExpensesView: View {
 struct WeekExpensesView_Previews: PreviewProvider {
     static var previews: some View {
         WeekExpensesView(
-            monthAndWeekFormat: "Feb, Week 1",
-            dayExpenses: TestData.sampleDayExpenses
+            weekExpense: TestData.weekViewModel.weekExpenses.first ?? TestData.sampleWeekExpenseEmpty
         )
         .previewLayout(.sizeThatFits)
         .background(Color.white)
         .padding()
-        .background(Color.green)
     }
 }

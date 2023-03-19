@@ -11,29 +11,48 @@ import CoreData
 import OSLog
 
 // MARK: Protocol
-protocol ExpenseType {
+protocol ExpenseRepositoryType {
     
     var database: Database { get }
     
     var expenses: [Expense] { get set }
     var expensesPublisher: Published<[Expense]>.Publisher { get }
     
+    var todaysExpense: DayExpense? { get set }
+    var todaysExpensePublisher: Published<DayExpense?>.Publisher { get }
+    
     func getAll() -> [Expense]
     func add(date: Date, name: String, price: Double) -> Void
     func update(_ expense: Expense) -> Void
+    
+    func getTodaysExpense() -> DayExpense?
+    
+    func updateToLatestExpense() -> Void
 }
 
 
 // MARK: - App Implementation
-final class ExpenseRepository: ObservableObject, ExpenseType {
+final class ExpenseRepository: ObservableObject, ExpenseRepositoryType {
     
     let database: Database
     
     @Published var expenses: [Expense] = []
     var expensesPublisher: Published<[Expense]>.Publisher { $expenses }
     
+    @Published var todaysExpense: DayExpense?
+    var todaysExpensePublisher: Published<DayExpense?>.Publisher { $todaysExpense }
+    
     init(database: Database = LocalDatabase(container: .myExpenses)) {
         self.database = database
+        
+        database.loadContainer { _ in
+            
+        } onSuccess: { [weak self] in
+            guard let self else {
+                return
+            }
+            self.updateToLatestExpense()
+        }
     }
     
     func getAll() -> [Expense] {
@@ -43,6 +62,27 @@ final class ExpenseRepository: ObservableObject, ExpenseType {
         } catch let error {
             Logger.database.error("get all - error: \(error.localizedDescription)")
             return []
+        }
+    }
+    
+    func getTodaysExpense() -> DayExpense? {
+        let calendar = Calendar.current
+        let startDate = Calendar.current.startOfDay(for: "2023-02-01T00:00:00+00:00".toDate())
+        let endDate = calendar.date(byAdding: .day, value: 1, to: startDate)!
+        let dateAttribute = "date"
+        
+        do {
+            let items = try getDataWith(
+                format: "(\(dateAttribute) >= %@) AND (\(dateAttribute) < %@)",
+                startDate as NSDate,
+                endDate as NSDate,
+                sortDescriptors: [.init(key: dateAttribute, ascending: true)]
+            )
+            return .init(date: startDate, items: items)
+            
+        } catch let error {
+            Logger.database.error("get todays expense - error: \(error.localizedDescription)")
+            return .init(date: startDate, items: [])
         }
     }
     
@@ -78,7 +118,8 @@ final class ExpenseRepository: ObservableObject, ExpenseType {
     }
     
     func updateToLatestExpense() {
-        
+        expenses = getAll()
+        todaysExpense = getTodaysExpense()
     }
     
 }
@@ -95,31 +136,16 @@ extension ExpenseRepository {
         request.predicate = .init(format: format, args)
         return try database.context.fetch(request)
     }
+    
+    func getDataWith(
+        format: String,
+        _ args: CVarArg...,
+        sortDescriptors: [NSSortDescriptor] = []
+    ) throws -> [Expense] {
+        let request = Expense.fetchRequest()
+        request.sortDescriptors = sortDescriptors
+        request.predicate = .init(format: format, args)
+        return try database.context.fetch(request)
+    }
 }
 
-
-// MARK: - Test Implementation
-final class MockExpenseRepository: ObservableObject, ExpenseType {
-    
-    let database: Database
-    
-    @Published var expenses: [Expense] = []
-    var expensesPublisher: Published<[Expense]>.Publisher { $expenses }
-    
-    init(database: Database = InMemoryLocalDatabase(container: .myExpenses)) {
-        self.database = database
-    }
-    
-    func getAll() -> [Expense] {
-        []
-    }
-    
-    func add(date: Date, name: String, price: Double) {
-        
-    }
-    
-    func update(_ expense: Expense) {
-        
-    }
-    
-}

@@ -61,8 +61,10 @@ extension Database {
     ) {
         container.loadPersistentStores { (description, error) in
             if let error = error {
+                Logger.database.debug("loadPersistentStores error: \(error.localizedDescription)")
                 onError(error); return
             }
+            Logger.database.debug("loadPersistentStores loaded")
             onSuccess(); return
         }
     }
@@ -94,10 +96,11 @@ class InMemoryLocalDatabase: Database {
     required init(container: Containers) {
         self.container = NSPersistentContainer(name: container.name)
         if let storeDescription = self.container.persistentStoreDescriptions.first {
-            storeDescription.type = NSInMemoryStoreType
+            // storeDescription.type = NSInMemoryStoreType
             storeDescription.url = URL(fileURLWithPath: "/dev/null")
         }
         Logger.database.debug("container persistent descriptions: \(self.container.persistentStoreDescriptions)")
     }
     
 }
+

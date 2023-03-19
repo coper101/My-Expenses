@@ -9,13 +9,13 @@ import SwiftUI
 
 @main
 struct My_ExpensesApp: App {
-    @StateObject var appViewModel: AppViewModel = .init()
+    @StateObject var expenseRepository = ExpenseRepository()
 
     var body: some Scene {
         WindowGroup {
             AppView()
-                .environmentObject(appViewModel)
                 .preferredColorScheme(.light)
+                .environmentObject(expenseRepository)
         }
     }
 }

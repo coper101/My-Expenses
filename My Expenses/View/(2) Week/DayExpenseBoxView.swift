@@ -10,7 +10,7 @@ import SwiftUI
 enum Day: Int {
     case sun, mon, tue, wed, thu, fri, sat
     
-    var abbr: String {
+    var name: String {
         switch self {
         case .sun:
             return "Sun"
@@ -30,18 +30,43 @@ enum Day: Int {
     }
 }
 
+struct DayExpenseViewModel {
+    let dayExpense: DayExpense
+    
+    init(_ dayExpense: DayExpense) {
+        self.dayExpense = dayExpense
+    }
+    
+    var shortWeekdayName: String {
+        let weekday = dayExpense.date.getWeekday()
+        let day = Day(rawValue: weekday) ?? .sun
+        return day.name
+    }
+    
+    var numberOfItems: String {
+        "\(dayExpense.items.count) Items"
+    }
+    
+    var totalPrice: String {
+        getTotalPrice(items: dayExpense.items)
+    }
+}
+
 struct DayExpenseBoxView: View {
     // MARK: - Props
-    var width: CGFloat
-    var day: Day
-    var price: Double
-    var itemsCount: Int
+    private let viewModel: DayExpenseViewModel
+    let width: CGFloat
+    
+    init(dayExpense: DayExpense, width: CGFloat) {
+        self.viewModel = .init(dayExpense)
+        self.width = width
+    }
     
     // MARK: - UI
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
             
-            Text(day.abbr)
+            Text(viewModel.shortWeekdayName)
                 .textStyle(
                     foregroundColor: .black,
                     colorOpacity: 0.2,
@@ -49,14 +74,14 @@ struct DayExpenseBoxView: View {
                     size: 18
                 )
             
-            Text(String(format: "%.2f", price))
+            Text(viewModel.totalPrice)
                 .textStyle(
                     foregroundColor: .black,
                     fontWeight: .semibold,
                     size: 18
                 )
             
-            Text("\(itemsCount) Items")
+            Text(viewModel.numberOfItems)
                 .textStyle(
                     foregroundColor: .black,
                     colorOpacity: 0.2,
@@ -78,15 +103,12 @@ struct DayExpenseBoxView: View {
 struct DayExpenseBoxView_Previews: PreviewProvider {
     static var previews: some View {
         DayExpenseBoxView(
-            width: 102,
-            day: .sun,
-            price: 11.30,
-            itemsCount: 4
+            dayExpense: TestData.sampleDayExpense,
+            width: 102
         )
-            .previewLayout(.sizeThatFits)
-            .frame(width: 102)
-            .background(Color.white)
-            .padding()
-            .background(Color.green)
+        .previewLayout(.sizeThatFits)
+        .frame(width: 102)
+        .background(Color.white)
+        .padding()
     }
 }

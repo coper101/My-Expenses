@@ -9,7 +9,8 @@ import SwiftUI
 
 struct AppView: View {
     // MARK: - Props
-    @EnvironmentObject var appViewModel: AppViewModel
+    @EnvironmentObject var expenseRepository: ExpenseRepository
+    @StateObject var appViewModel: AppViewModel = .init()
     
     // MARK: - UI
     var body: some View {
@@ -26,9 +27,9 @@ struct AppView: View {
                 
                 switch (appViewModel.selectedTab) {
                 case .today:
-                    TodaysView()
+                    TodaysView(expenseRepository: expenseRepository)
                 case .week:
-                    WeekView()
+                    WeekView(expenseRepository: expenseRepository)
                 } //: switch-case
                 
             } //: ScrollView
@@ -50,6 +51,6 @@ struct AppView_Previews: PreviewProvider {
     static var previews: some View {
         AppView()
             .previewLayout(.sizeThatFits)
-            .environmentObject(AppViewModel())
+            .environmentObject(TestData.repository)
     }
 }

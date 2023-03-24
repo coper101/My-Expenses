@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		273F5D6429C6E5F100C91C24 /* ExpenseRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273F5D6329C6E5F100C91C24 /* ExpenseRowView.swift */; };
 		273F5D6629C6EB7900C91C24 /* Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273F5D6529C6EB7900C91C24 /* Numbers.swift */; };
+		273F5D6829C702EF00C91C24 /* NewExpenseInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273F5D6729C702EF00C91C24 /* NewExpenseInputView.swift */; };
+		2740146129CDABE1003EF614 /* GuideLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2740146029CDABE1003EF614 /* GuideLineView.swift */; };
 		2760488D29BDC0F000AB8497 /* My_Expenses.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2760488B29BDC0F000AB8497 /* My_Expenses.xcdatamodeld */; };
 		2760488F29BDE58800AB8497 /* TodaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2760488E29BDE58800AB8497 /* TodaysView.swift */; };
 		2760489329BDE5BA00AB8497 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2760489229BDE5BA00AB8497 /* WeekView.swift */; };
@@ -57,6 +59,8 @@
 /* Begin PBXFileReference section */
 		273F5D6329C6E5F100C91C24 /* ExpenseRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseRowView.swift; sourceTree = "<group>"; };
 		273F5D6529C6EB7900C91C24 /* Numbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numbers.swift; sourceTree = "<group>"; };
+		273F5D6729C702EF00C91C24 /* NewExpenseInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExpenseInputView.swift; sourceTree = "<group>"; };
+		2740146029CDABE1003EF614 /* GuideLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideLineView.swift; sourceTree = "<group>"; };
 		2760488C29BDC0F000AB8497 /* My_Expenses.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = My_Expenses.xcdatamodel; sourceTree = "<group>"; };
 		2760488E29BDE58800AB8497 /* TodaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysView.swift; sourceTree = "<group>"; };
 		2760489229BDE5BA00AB8497 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
@@ -114,6 +118,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2740145F29CDABC8003EF614 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2740146029CDABE1003EF614 /* GuideLineView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		2760489629BDE7E000AB8497 /* Style */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +140,7 @@
 			children = (
 				2760488E29BDE58800AB8497 /* TodaysView.swift */,
 				273F5D6329C6E5F100C91C24 /* ExpenseRowView.swift */,
+				273F5D6729C702EF00C91C24 /* NewExpenseInputView.swift */,
 			);
 			path = "(1) Today";
 			sourceTree = "<group>";
@@ -177,6 +190,7 @@
 			children = (
 				27A25A6D29BDBAB400EC5E0D /* My_Expenses.entitlements */,
 				27A25A9429BDBAF000EC5E0D /* App */,
+				2740145F29CDABC8003EF614 /* Components */,
 				27A25A9529BDBAF600EC5E0D /* View */,
 				27A25A9A29BDBB4000EC5E0D /* Data */,
 				278BAB5E29C5BE5200A5A005 /* View Model */,
@@ -408,11 +422,13 @@
 				2760489329BDE5BA00AB8497 /* WeekView.swift in Sources */,
 				27A25AA029BDBBFE00EC5E0D /* Logger.swift in Sources */,
 				276048DC29BF244600AB8497 /* Test.swift in Sources */,
+				273F5D6829C702EF00C91C24 /* NewExpenseInputView.swift in Sources */,
 				276048D229BF13BA00AB8497 /* TopBarView.swift in Sources */,
 				27A25A9C29BDBB4F00EC5E0D /* ExpenseRepository.swift in Sources */,
 				276048CE29BF118D00AB8497 /* Frame.swift in Sources */,
 				2760489529BDE7D800AB8497 /* Text.swift in Sources */,
 				276048D629BF19B200AB8497 /* DayExpenseBoxView.swift in Sources */,
+				2740146129CDABE1003EF614 /* GuideLineView.swift in Sources */,
 				273F5D6629C6EB7900C91C24 /* Numbers.swift in Sources */,
 				278BAB6229C5BE8300A5A005 /* WeekViewModel.swift in Sources */,
 				278BAB6529C5C6C800A5A005 /* WeekExpense.swift in Sources */,

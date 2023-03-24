@@ -13,9 +13,11 @@ final class TodaysViewModel {
     private let expenseRepository: ExpenseRepositoryType
     private var subscriptions: Set<AnyCancellable> = .init()
     
-    // MARK: UI State
+    // MARK: Data
     @Published var todaysExpense: DayExpense?
     @Published var expenses: [Expense] = []
+    
+    // MARK: UI
 
     var totalPrice: String {
         getTotalPrice(items: todaysExpense?.items ?? [])

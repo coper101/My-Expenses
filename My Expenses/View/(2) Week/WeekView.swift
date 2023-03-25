@@ -35,6 +35,5 @@ struct WeekView_Previews: PreviewProvider {
     static var previews: some View {
         WeekView(expenseRepository: TestData.repository)
             .previewLayout(.sizeThatFits)
-            .environmentObject(AppViewModel())
     }
 }

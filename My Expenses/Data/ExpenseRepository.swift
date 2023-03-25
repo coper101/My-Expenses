@@ -67,7 +67,7 @@ final class ExpenseRepository: ObservableObject, ExpenseRepositoryType {
     
     func getTodaysExpense() -> DayExpense? {
         let calendar = Calendar.current
-        let startDate = Calendar.current.startOfDay(for: "2023-02-01T00:00:00+00:00".toDate())
+        let startDate = Calendar.current.startOfDay(for: .init())
         let endDate = calendar.date(byAdding: .day, value: 1, to: startDate)!
         let dateAttribute = "date"
         

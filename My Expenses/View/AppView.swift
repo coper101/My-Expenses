@@ -9,8 +9,13 @@ import SwiftUI
 
 struct AppView: View {
     // MARK: - Props
-    @EnvironmentObject var expenseRepository: ExpenseRepository
-    @StateObject var appViewModel: AppViewModel = .init()
+    @ObservedObject var expenseRepository: ExpenseRepository
+    @StateObject var appViewModel: AppViewModel
+    
+    init(expenseRepository: ExpenseRepository) {
+        self._expenseRepository = .init(wrappedValue: expenseRepository)
+        self._appViewModel = .init(wrappedValue: .init(expenseRepository: expenseRepository))
+    }
     
     // MARK: - UI
     var body: some View {
@@ -27,7 +32,10 @@ struct AppView: View {
                 
                 switch (appViewModel.selectedTab) {
                 case .today:
-                    TodaysView(expenseRepository: expenseRepository)
+                    TodaysView(
+                        expenseRepository: expenseRepository,
+                        appViewModel: appViewModel
+                    )
                 case .week:
                     WeekView(expenseRepository: expenseRepository)
                 } //: switch-case
@@ -36,7 +44,14 @@ struct AppView: View {
             .fillMaxSize()
             
             // MARK: Bottom Bar
-            BottomBarView(selectedTab: $appViewModel.selectedTab)
+            if appViewModel.isNewItemFocused {
+                NewItemInputView(
+                    isFocused: $appViewModel.isNewItemFocused,
+                    commitAction: newItemAction
+                )
+            } else {
+                BottomBarView(selectedTab: $appViewModel.selectedTab)
+            }
             
         } //: VStack
         .fillMaxSize()
@@ -44,13 +59,22 @@ struct AppView: View {
     }
     
     // MARK: - Actions
+    func newItemAction(name: String, price: String) {
+        guard !name.isEmpty, let priceDb = Double(price) else {
+            appViewModel.isNewItemFocused = false
+            return
+        }
+        expenseRepository.add(date: .init(), name: name, price: priceDb)
+        appViewModel.isNewItemFocused = false
+    }
 }
 
 // MARK: - Preview
 struct AppView_Previews: PreviewProvider {
+    static var expenseRepo = TestData.repository
+    
     static var previews: some View {
-        AppView()
+        AppView(expenseRepository: expenseRepo)
             .previewLayout(.sizeThatFits)
-            .environmentObject(TestData.repository)
     }
 }

@@ -13,9 +13,8 @@ struct My_ExpensesApp: App {
 
     var body: some Scene {
         WindowGroup {
-            AppView()
+            AppView(expenseRepository: expenseRepository)
                 .preferredColorScheme(.light)
-                .environmentObject(expenseRepository)
         }
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-final class TodaysViewModel {
+final class TodaysViewModel: ObservableObject {
     
     private let expenseRepository: ExpenseRepositoryType
     private var subscriptions: Set<AnyCancellable> = .init()
@@ -33,7 +33,11 @@ final class TodaysViewModel {
     // MARK: Event
     func observeTodaysExpense() {
         expenseRepository.todaysExpensePublisher
-            .sink { [weak self] in self?.todaysExpense = $0 }
+            .sink { [weak self] in
+                print("todays expense: ", $0?.items.count ?? 0)
+                self?.todaysExpense = $0
+                
+            }
             .store(in: &subscriptions)
     }
     

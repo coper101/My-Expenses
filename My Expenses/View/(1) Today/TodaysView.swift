@@ -9,10 +9,15 @@ import SwiftUI
 
 struct TodaysView: View {
     // MARK: - Props
-    private let viewModel: TodaysViewModel
+    @ObservedObject var appViewModel: AppViewModel
+    @StateObject private var viewModel: TodaysViewModel
     
-    init(expenseRepository: ExpenseRepositoryType) {
-        self.viewModel = .init(expenseRepository: expenseRepository)
+    init(
+        expenseRepository: ExpenseRepositoryType,
+        appViewModel: AppViewModel
+    ) {
+        self._viewModel = .init(wrappedValue: .init(expenseRepository: expenseRepository))
+        self.appViewModel = appViewModel
     }
 
     // MARK: - UI
@@ -65,7 +70,6 @@ struct TodaysView: View {
             .padding(.top, 40 - 12)
 
         } //: VStack
-
     }
     
     var body: some View {
@@ -73,12 +77,13 @@ struct TodaysView: View {
             
             // MARK: Content
             content
-
+            
             // MARK: Input
-            NewExpenseInputView { e in
-                
-            }
-
+            InputNavigatorView(
+                enterItemAction: enterItemAction,
+                scribbleAction: scribbleAction
+            )
+            
         } //: VStack
         .padding(.top, 32)
         .padding(.bottom, 18)
@@ -89,16 +94,25 @@ struct TodaysView: View {
     }
     
     // MARK: - Actions
-//    func commitAction(name) {
-//
-//    }
+    func enterItemAction() {
+        appViewModel.isNewItemFocused = true
+    }
+    
+    func scribbleAction() {
+        
+    }
 }
 
 // MARK: - Preview
 struct TodaysExpenses_Previews: PreviewProvider {
+    static var expenseRepo: ExpenseRepository = TestData.repository
+    
     static var previews: some View {
-        TodaysView(expenseRepository: TestData.repository)
-            .previewLayout(.sizeThatFits)
-            .background(Color.white)
+        TodaysView(
+            expenseRepository: expenseRepo,
+            appViewModel: .init(expenseRepository: expenseRepo)
+        )
+        .previewLayout(.sizeThatFits)
+        .background(Color.white)
     }
 }

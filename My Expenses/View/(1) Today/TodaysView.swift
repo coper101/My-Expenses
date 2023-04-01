@@ -36,7 +36,11 @@ struct TodaysView: View {
             // MARK: Expenses
             if let todaysExpense = viewModel.todaysExpense {
                 ForEach(todaysExpense.items, id: \.date) {
-                    ExpenseRowView(expense: $0)
+                    ExpenseRowView(
+                        expense: $0,
+                        isEditing: appViewModel.isEditing,
+                        deleteAction: viewModel.didTapDeleteExpense
+                    )
                 }
             }
             

@@ -17,6 +17,8 @@ final class AppViewModel: ObservableObject {
     // MARK: UI
     @Published var selectedTab: TabItem = .today
     @Published var isNewItemFocused: Bool = false
+    @Published var isEditing: Bool = false
+    @Published var isCustomizing: Bool = false
 
     init(expenseRepository: ExpenseRepositoryType) {
         self.expenseRepository = expenseRepository

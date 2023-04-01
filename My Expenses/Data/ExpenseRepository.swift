@@ -24,6 +24,7 @@ protocol ExpenseRepositoryType {
     func getAll() -> [Expense]
     func add(date: Date, name: String, price: Double) -> Void
     func update(_ expense: Expense) -> Void
+    func delete(_ expense: Expense) -> Void
     
     func getTodaysExpense() -> DayExpense?
     
@@ -114,6 +115,18 @@ final class ExpenseRepository: ObservableObject, ExpenseRepositoryType {
             }
         } catch let error {
             Logger.database.error("update - error: \(error.localizedDescription)")
+        }
+    }
+    
+    func delete(_ expense: Expense) {
+        do {
+            database.context.delete(expense)
+            let isDeleted = try database.context.saveIfNeeded()
+            if isDeleted {
+                updateToLatestExpense()
+            }
+        } catch let error {
+            Logger.database.error("delete - error: \(error.localizedDescription)")
         }
     }
     

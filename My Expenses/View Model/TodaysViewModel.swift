@@ -46,4 +46,11 @@ final class TodaysViewModel: ObservableObject {
             .sink { [weak self] in self?.expenses = $0 }
             .store(in: &subscriptions)
     }
+    
+    func didTapDeleteExpense(_ expense: ExpenseType) {
+        guard let expense = expense as? Expense else {
+            return
+        }
+        expenseRepository.delete(expense)
+    }
 }

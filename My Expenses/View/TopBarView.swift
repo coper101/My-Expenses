@@ -9,8 +9,10 @@ import SwiftUI
 
 struct TopBarView: View {
     // MARK: - Props
-    var editAction: () -> Void
-    var customizeAction: () -> Void
+    var isEditing: Bool
+    var isCustomizing: Bool
+    var editAction: Action
+    var customizeAction: Action
     
     // MARK: - UI
     var body: some View {
@@ -18,6 +20,7 @@ struct TopBarView: View {
             
             NavBarItemView(
                 title: "Edit",
+                isActive: isEditing,
                 action: editAction
             )
             
@@ -25,6 +28,7 @@ struct TopBarView: View {
             
             NavBarItemView(
                 title: "Customize",
+                isActive: isCustomizing,
                 action: customizeAction
             )
             
@@ -41,27 +45,42 @@ struct TopBarView: View {
 struct TopBarView_Previews: PreviewProvider {
     static var previews: some View {
         TopBarView(
+            isEditing: false,
+            isCustomizing: false,
             editAction: {},
             customizeAction: {}
         )
         .previewLayout(.sizeThatFits)
         .padding()
         .background(Color.green)
+        .previewDisplayName("Normal")
+        
+        TopBarView(
+            isEditing: true,
+            isCustomizing: true,
+            editAction: {},
+            customizeAction: {}
+        )
+        .previewLayout(.sizeThatFits)
+        .padding()
+        .background(Color.green)
+        .previewDisplayName("Editing and Customizing")
     }
 }
 
 struct NavBarItemView: View {
     // MARK: - Props
     var title: String
+    var isActive: Bool
     var action: () -> Void
     
     // MARK: - UI
     var body: some View {
         Button(action: action) {
-            Text(title)
+            Text(isActive ? "Done" : title)
                 .textStyle(
-                    foregroundColor: .black,
-                    colorOpacity: 0.2,
+                    foregroundColor: isActive ? .secondary : .black,
+                    colorOpacity: isActive ? 1 : 0.2,
                     fontWeight: .semibold,
                     size: 18
                 )

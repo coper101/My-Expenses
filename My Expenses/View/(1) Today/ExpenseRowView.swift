@@ -30,11 +30,22 @@ struct ExpenseViewModel {
 
 struct ExpenseRowView: View {
     // MARK: - Props
+    typealias DeleteAction = (ExpenseType) -> Void
+    
     private let viewModel: ExpenseViewModel
+    let isEditing: Bool
+    let deleteAction: DeleteAction
     let background: Color?
     
-    init(expense: ExpenseType, background: Color? = nil) {
+    init(
+        expense: ExpenseType,
+        isEditing: Bool,
+        deleteAction: @escaping DeleteAction,
+        background: Color? = nil
+    ) {
         self.viewModel = .init(expense)
+        self.isEditing = isEditing
+        self.deleteAction = deleteAction
         self.background = background
     }
     
@@ -43,15 +54,27 @@ struct ExpenseRowView: View {
         HStack(alignment: .bottom, spacing: 14) {
 
             // MARK: Time
-            Text(viewModel.time)
-                .textStyle(
-                    foregroundColor: .black,
-                    colorOpacity: 0.2,
-                    fontWeight: .semibold,
-                    size: 12
-                )
-                .padding(.bottom, 2)
-                .frame(width: 38, alignment: .trailing)
+            Group {
+                if isEditing {
+                    Button(action: { deleteAction(viewModel.expense) }) {
+                        Icons.delete.image
+                            .resizable()
+                            .foregroundColor(.error)
+                            .scaledToFit()
+                            .frame(height: 30)
+                    }
+                } else {
+                    Text(viewModel.time)
+                        .textStyle(
+                            foregroundColor: .black,
+                            colorOpacity: 0.2,
+                            fontWeight: .semibold,
+                            size: 12
+                        )
+                        .padding(.bottom, 2)
+                }
+            }
+            .frame(width: 38, alignment: .trailing)
 
             // MARK: Name
             Text(viewModel.name)
@@ -105,14 +128,29 @@ struct ExpenseRowView_Previews: PreviewProvider {
     static var previews: some View {
         ExpenseRowView(
             expense: TestData.sampleExpense,
+            isEditing: false,
+            deleteAction: { _ in },
             background: nil
         )
         .previewLayout(.sizeThatFits)
+        .previewDisplayName("Normal")
         
         ExpenseRowView(
             expense: TestData.sampleExpense,
+            isEditing: false,
+            deleteAction: { _ in },
             background: .blue
         )
         .previewLayout(.sizeThatFits)
+        .previewDisplayName("Normal")
+        
+        ExpenseRowView(
+            expense: TestData.sampleExpense,
+            isEditing: true,
+            deleteAction: { _ in },
+            background: nil
+        )
+        .previewLayout(.sizeThatFits)
+        .previewDisplayName("Editing")
     }
 }

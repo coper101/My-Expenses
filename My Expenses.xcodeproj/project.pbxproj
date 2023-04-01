@@ -13,6 +13,12 @@
 		2740146129CDABE1003EF614 /* GuideLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2740146029CDABE1003EF614 /* GuideLineView.swift */; };
 		2740146329CDACED003EF614 /* NewItemInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2740146229CDACED003EF614 /* NewItemInputView.swift */; };
 		2740146529CDB267003EF614 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2740146429CDB267003EF614 /* CustomTextFieldView.swift */; };
+		274014D229D7E651003EF614 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274014D129D7E651003EF614 /* Icons.swift */; };
+		274014D429D7E6B5003EF614 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274014D329D7E6B5003EF614 /* Colors.swift */; };
+		274014D629D7ED5C003EF614 /* CustomizeSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274014D529D7ED5C003EF614 /* CustomizeSheetView.swift */; };
+		274014D929D7EDB5003EF614 /* SheetTabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274014D829D7EDB5003EF614 /* SheetTabItemView.swift */; };
+		274014DB29D7F087003EF614 /* Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274014DA29D7F087003EF614 /* Modifier.swift */; };
+		274014DD29D7F193003EF614 /* SheetTopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274014DC29D7F193003EF614 /* SheetTopBarView.swift */; };
 		2760488D29BDC0F000AB8497 /* My_Expenses.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2760488B29BDC0F000AB8497 /* My_Expenses.xcdatamodeld */; };
 		2760488F29BDE58800AB8497 /* TodaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2760488E29BDE58800AB8497 /* TodaysView.swift */; };
 		2760489329BDE5BA00AB8497 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2760489229BDE5BA00AB8497 /* WeekView.swift */; };
@@ -65,6 +71,12 @@
 		2740146029CDABE1003EF614 /* GuideLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideLineView.swift; sourceTree = "<group>"; };
 		2740146229CDACED003EF614 /* NewItemInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemInputView.swift; sourceTree = "<group>"; };
 		2740146429CDB267003EF614 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
+		274014D129D7E651003EF614 /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
+		274014D329D7E6B5003EF614 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		274014D529D7ED5C003EF614 /* CustomizeSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeSheetView.swift; sourceTree = "<group>"; };
+		274014D829D7EDB5003EF614 /* SheetTabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetTabItemView.swift; sourceTree = "<group>"; };
+		274014DA29D7F087003EF614 /* Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifier.swift; sourceTree = "<group>"; };
+		274014DC29D7F193003EF614 /* SheetTopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetTopBarView.swift; sourceTree = "<group>"; };
 		2760488C29BDC0F000AB8497 /* My_Expenses.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = My_Expenses.xcdatamodel; sourceTree = "<group>"; };
 		2760488E29BDE58800AB8497 /* TodaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysView.swift; sourceTree = "<group>"; };
 		2760489229BDE5BA00AB8497 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
@@ -131,6 +143,25 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		274014D029D7E63F003EF614 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				274014D129D7E651003EF614 /* Icons.swift */,
+				274014D329D7E6B5003EF614 /* Colors.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		274014D729D7ED99003EF614 /* Sheet */ = {
+			isa = PBXGroup;
+			children = (
+				274014D529D7ED5C003EF614 /* CustomizeSheetView.swift */,
+				274014D829D7EDB5003EF614 /* SheetTabItemView.swift */,
+				274014DC29D7F193003EF614 /* SheetTopBarView.swift */,
+			);
+			path = Sheet;
+			sourceTree = "<group>";
+		};
 		2760489629BDE7E000AB8497 /* Style */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +178,7 @@
 				273F5D6329C6E5F100C91C24 /* ExpenseRowView.swift */,
 				273F5D6729C702EF00C91C24 /* InputNavigatorView.swift */,
 				2740146229CDACED003EF614 /* NewItemInputView.swift */,
+				274014D729D7ED99003EF614 /* Sheet */,
 			);
 			path = "(1) Today";
 			sourceTree = "<group>";
@@ -203,6 +235,7 @@
 				27A25A9229BDBAC000EC5E0D /* Model */,
 				2760489629BDE7E000AB8497 /* Style */,
 				27A25AA129BDBC0000EC5E0D /* Utils */,
+				274014D029D7E63F003EF614 /* Theme */,
 				27A25A9329BDBAC900EC5E0D /* Resources */,
 			);
 			path = "My Expenses";
@@ -280,6 +313,7 @@
 				27A25A9F29BDBBFE00EC5E0D /* Logger.swift */,
 				276048D929BF1D9D00AB8497 /* Date.swift */,
 				273F5D6529C6EB7900C91C24 /* Numbers.swift */,
+				274014DA29D7F087003EF614 /* Modifier.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -414,16 +448,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				2760488D29BDC0F000AB8497 /* My_Expenses.xcdatamodeld in Sources */,
+				274014D629D7ED5C003EF614 /* CustomizeSheetView.swift in Sources */,
+				274014D429D7E6B5003EF614 /* Colors.swift in Sources */,
 				273F5D6429C6E5F100C91C24 /* ExpenseRowView.swift in Sources */,
 				278BAB6729C5C6E400A5A005 /* DayExpense.swift in Sources */,
 				2740146529CDB267003EF614 /* CustomTextFieldView.swift in Sources */,
 				27D6BEE029BDBF0000E3F19D /* Expense.swift in Sources */,
 				278BAB6029C5BE7300A5A005 /* TodaysViewModel.swift in Sources */,
+				274014DD29D7F193003EF614 /* SheetTopBarView.swift in Sources */,
 				2760488F29BDE58800AB8497 /* TodaysView.swift in Sources */,
 				27A25A9E29BDBBEC00EC5E0D /* LocalDatabase.swift in Sources */,
 				27A25A6329BDBAB200EC5E0D /* My_ExpensesApp.swift in Sources */,
 				276048D429BF13C300AB8497 /* BottomBarView.swift in Sources */,
+				274014D929D7EDB5003EF614 /* SheetTabItemView.swift in Sources */,
 				276048DA29BF1D9D00AB8497 /* Date.swift in Sources */,
+				274014D229D7E651003EF614 /* Icons.swift in Sources */,
 				27A25A9929BDBB1600EC5E0D /* AppViewModel.swift in Sources */,
 				276048D829BF1BCE00AB8497 /* WeekExpensesView.swift in Sources */,
 				2740146329CDACED003EF614 /* NewItemInputView.swift in Sources */,
@@ -438,6 +477,7 @@
 				276048D629BF19B200AB8497 /* DayExpenseBoxView.swift in Sources */,
 				2740146129CDABE1003EF614 /* GuideLineView.swift in Sources */,
 				273F5D6629C6EB7900C91C24 /* Numbers.swift in Sources */,
+				274014DB29D7F087003EF614 /* Modifier.swift in Sources */,
 				278BAB6229C5BE8300A5A005 /* WeekViewModel.swift in Sources */,
 				278BAB6529C5C6C800A5A005 /* WeekExpense.swift in Sources */,
 				27A25A9729BDBB0500EC5E0D /* AppView.swift in Sources */,

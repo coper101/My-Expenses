@@ -19,43 +19,60 @@ struct AppView: View {
     
     // MARK: - UI
     var body: some View {
-        VStack(spacing: 0) {
-            
-            // MARK: Top Bar
-            TopBarView(
-                editAction: {},
-                customizeAction: {}
-            )
+        ZStack(alignment: .bottom) {
             
             // MARK: Content
-            ScrollView(.vertical, showsIndicators: false) {
+            VStack(spacing: 0) {
                 
-                switch (appViewModel.selectedTab) {
-                case .today:
-                    TodaysView(
-                        expenseRepository: expenseRepository,
-                        appViewModel: appViewModel
-                    )
-                case .week:
-                    WeekView(expenseRepository: expenseRepository)
-                } //: switch-case
-                
-            } //: ScrollView
-            .fillMaxSize()
-            
-            // MARK: Bottom Bar
-            if appViewModel.isNewItemFocused {
-                NewItemInputView(
-                    isFocused: $appViewModel.isNewItemFocused,
-                    commitAction: newItemAction
+                // MARK: Top Bar
+                TopBarView(
+                    isEditing: appViewModel.isEditing,
+                    isCustomizing: appViewModel.isCustomizing,
+                    editAction: editAction,
+                    customizeAction: customizeAction
                 )
-            } else {
-                BottomBarView(selectedTab: $appViewModel.selectedTab)
-            }
+                
+                // MARK: Content
+                ScrollView(.vertical, showsIndicators: false) {
+                    
+                    switch (appViewModel.selectedTab) {
+                    case .today:
+                        TodaysView(
+                            expenseRepository: expenseRepository,
+                            appViewModel: appViewModel
+                        )
+                    case .week:
+                        WeekView(expenseRepository: expenseRepository)
+                    } //: switch-case
+                    
+                } //: ScrollView
+                .fillMaxSize()
+                
+                // MARK: Bottom Bar
+                if appViewModel.isNewItemFocused {
+                    NewItemInputView(
+                        isFocused: $appViewModel.isNewItemFocused,
+                        commitAction: newItemAction
+                    )
+                } else {
+                    BottomBarView(selectedTab: $appViewModel.selectedTab)
+                }
+                
+            } //: VStack
+            .fillMaxSize()
+            .background(Color.white)
+            .zIndex(0)
             
-        } //: VStack
-        .fillMaxSize()
-        .background(Color.white)
+            // MARK: Sheet
+            if appViewModel.isCustomizing {
+                
+                CustomizeSheetView(closeAction: closeSheetAction)
+                    .transition(.move(edge: .bottom))
+                    .animation(.easeOut(duration: 0.4), value: appViewModel.isCustomizing)
+                    .zIndex(1)
+                    .shadow(color: .black.opacity(0.05), radius: 4, x: 0, y: -2)
+            } //: if
+        }
     }
     
     // MARK: - Actions
@@ -66,6 +83,24 @@ struct AppView: View {
         }
         expenseRepository.add(date: .init(), name: name, price: priceDb)
         appViewModel.isNewItemFocused = false
+    }
+    
+    func editAction() {
+        withAnimation {
+            appViewModel.isEditing.toggle()
+        }
+    }
+    
+    func customizeAction() {
+        withAnimation {
+            appViewModel.isCustomizing.toggle()
+        }
+    }
+    
+    func closeSheetAction() {
+        withAnimation {
+            appViewModel.isCustomizing = false
+        }
     }
 }
 

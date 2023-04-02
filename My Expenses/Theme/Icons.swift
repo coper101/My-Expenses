@@ -10,6 +10,7 @@ import SwiftUI
 enum Icons: String {
     case delete = "delete-icon"
     case close = "close-icon"
+    case noSign = "no-sign-icon"
     var image: Image {
         Image(self.rawValue)
     }

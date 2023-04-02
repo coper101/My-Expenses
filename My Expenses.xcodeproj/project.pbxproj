@@ -19,6 +19,12 @@
 		274014D929D7EDB5003EF614 /* SheetTabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274014D829D7EDB5003EF614 /* SheetTabItemView.swift */; };
 		274014DB29D7F087003EF614 /* Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274014DA29D7F087003EF614 /* Modifier.swift */; };
 		274014DD29D7F193003EF614 /* SheetTopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274014DC29D7F193003EF614 /* SheetTopBarView.swift */; };
+		274014DF29D97544003EF614 /* CircleChipButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274014DE29D97544003EF614 /* CircleChipButtonView.swift */; };
+		274014E229D975E3003EF614 /* ColorPickerChipButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274014E129D975E3003EF614 /* ColorPickerChipButtonView.swift */; };
+		274014E429D976E3003EF614 /* ColorChipButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274014E329D976E3003EF614 /* ColorChipButtonView.swift */; };
+		274014E629D97793003EF614 /* NoColorChipButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274014E529D97793003EF614 /* NoColorChipButtonView.swift */; };
+		274014E829D97C2C003EF614 /* BackgroundOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274014E729D97C2C003EF614 /* BackgroundOptionsView.swift */; };
+		274014EB29D97C64003EF614 /* HeaderOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274014EA29D97C64003EF614 /* HeaderOptionsView.swift */; };
 		2760488D29BDC0F000AB8497 /* My_Expenses.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2760488B29BDC0F000AB8497 /* My_Expenses.xcdatamodeld */; };
 		2760488F29BDE58800AB8497 /* TodaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2760488E29BDE58800AB8497 /* TodaysView.swift */; };
 		2760489329BDE5BA00AB8497 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2760489229BDE5BA00AB8497 /* WeekView.swift */; };
@@ -77,6 +83,12 @@
 		274014D829D7EDB5003EF614 /* SheetTabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetTabItemView.swift; sourceTree = "<group>"; };
 		274014DA29D7F087003EF614 /* Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifier.swift; sourceTree = "<group>"; };
 		274014DC29D7F193003EF614 /* SheetTopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetTopBarView.swift; sourceTree = "<group>"; };
+		274014DE29D97544003EF614 /* CircleChipButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleChipButtonView.swift; sourceTree = "<group>"; };
+		274014E129D975E3003EF614 /* ColorPickerChipButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerChipButtonView.swift; sourceTree = "<group>"; };
+		274014E329D976E3003EF614 /* ColorChipButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChipButtonView.swift; sourceTree = "<group>"; };
+		274014E529D97793003EF614 /* NoColorChipButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoColorChipButtonView.swift; sourceTree = "<group>"; };
+		274014E729D97C2C003EF614 /* BackgroundOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundOptionsView.swift; sourceTree = "<group>"; };
+		274014EA29D97C64003EF614 /* HeaderOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderOptionsView.swift; sourceTree = "<group>"; };
 		2760488C29BDC0F000AB8497 /* My_Expenses.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = My_Expenses.xcdatamodel; sourceTree = "<group>"; };
 		2760488E29BDE58800AB8497 /* TodaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysView.swift; sourceTree = "<group>"; };
 		2760489229BDE5BA00AB8497 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
@@ -158,8 +170,30 @@
 				274014D529D7ED5C003EF614 /* CustomizeSheetView.swift */,
 				274014D829D7EDB5003EF614 /* SheetTabItemView.swift */,
 				274014DC29D7F193003EF614 /* SheetTopBarView.swift */,
+				274014E929D97C32003EF614 /* Options */,
+				274014E029D975D4003EF614 /* Chips */,
 			);
 			path = Sheet;
+			sourceTree = "<group>";
+		};
+		274014E029D975D4003EF614 /* Chips */ = {
+			isa = PBXGroup;
+			children = (
+				274014DE29D97544003EF614 /* CircleChipButtonView.swift */,
+				274014E129D975E3003EF614 /* ColorPickerChipButtonView.swift */,
+				274014E329D976E3003EF614 /* ColorChipButtonView.swift */,
+				274014E529D97793003EF614 /* NoColorChipButtonView.swift */,
+			);
+			path = Chips;
+			sourceTree = "<group>";
+		};
+		274014E929D97C32003EF614 /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				274014E729D97C2C003EF614 /* BackgroundOptionsView.swift */,
+				274014EA29D97C64003EF614 /* HeaderOptionsView.swift */,
+			);
+			path = Options;
 			sourceTree = "<group>";
 		};
 		2760489629BDE7E000AB8497 /* Style */ = {
@@ -461,21 +495,27 @@
 				27A25A6329BDBAB200EC5E0D /* My_ExpensesApp.swift in Sources */,
 				276048D429BF13C300AB8497 /* BottomBarView.swift in Sources */,
 				274014D929D7EDB5003EF614 /* SheetTabItemView.swift in Sources */,
+				274014E229D975E3003EF614 /* ColorPickerChipButtonView.swift in Sources */,
 				276048DA29BF1D9D00AB8497 /* Date.swift in Sources */,
 				274014D229D7E651003EF614 /* Icons.swift in Sources */,
 				27A25A9929BDBB1600EC5E0D /* AppViewModel.swift in Sources */,
 				276048D829BF1BCE00AB8497 /* WeekExpensesView.swift in Sources */,
 				2740146329CDACED003EF614 /* NewItemInputView.swift in Sources */,
+				274014DF29D97544003EF614 /* CircleChipButtonView.swift in Sources */,
 				2760489329BDE5BA00AB8497 /* WeekView.swift in Sources */,
 				27A25AA029BDBBFE00EC5E0D /* Logger.swift in Sources */,
 				276048DC29BF244600AB8497 /* Test.swift in Sources */,
 				273F5D6829C702EF00C91C24 /* InputNavigatorView.swift in Sources */,
 				276048D229BF13BA00AB8497 /* TopBarView.swift in Sources */,
+				274014EB29D97C64003EF614 /* HeaderOptionsView.swift in Sources */,
 				27A25A9C29BDBB4F00EC5E0D /* ExpenseRepository.swift in Sources */,
+				274014E629D97793003EF614 /* NoColorChipButtonView.swift in Sources */,
+				274014E829D97C2C003EF614 /* BackgroundOptionsView.swift in Sources */,
 				276048CE29BF118D00AB8497 /* Frame.swift in Sources */,
 				2760489529BDE7D800AB8497 /* Text.swift in Sources */,
 				276048D629BF19B200AB8497 /* DayExpenseBoxView.swift in Sources */,
 				2740146129CDABE1003EF614 /* GuideLineView.swift in Sources */,
+				274014E429D976E3003EF614 /* ColorChipButtonView.swift in Sources */,
 				273F5D6629C6EB7900C91C24 /* Numbers.swift in Sources */,
 				274014DB29D7F087003EF614 /* Modifier.swift in Sources */,
 				278BAB6229C5BE8300A5A005 /* WeekViewModel.swift in Sources */,

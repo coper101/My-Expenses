@@ -33,12 +33,32 @@ struct CustomizeSheetView: View {
                 closeAction: closeAction
             )
             .padding(.horizontal, 21)
-            .padding(.vertical, 24)
+            .padding(.top, 24)
+            .padding(.bottom, 18)
+            .background(Color.white)
+            .zIndex(1)
             
             // MARK: Content
-            VStack(spacing: 0) {
-                Spacer()
-            }
+            ScrollView(showsIndicators: false) {
+                
+                VStack(spacing: 15) {
+
+                    switch selectedSheetContent {
+                    case .background:
+                        BackgroundOptionsView()
+                    case .sheet:
+                        Text("TODO")
+                    case .text:
+                        Text("TODO")
+                    case .appIcon:
+                        Text("TODO")
+                    }
+                }
+                .padding(.top, 74)
+                .padding(.horizontal, 21)
+                
+            } //: ScrollView
+            .zIndex(0)
             
         } //: ZStack
         .frame(height: 366, alignment: .top)

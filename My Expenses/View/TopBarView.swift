@@ -7,29 +7,33 @@
 
 import SwiftUI
 
+struct TopBarItem {
+    var title: String
+    var isActive: Bool
+    var action: Action
+}
+
 struct TopBarView: View {
     // MARK: - Props
-    var isEditing: Bool
-    var isCustomizing: Bool
-    var editAction: Action
-    var customizeAction: Action
+    var leading: TopBarItem
+    var trailing: TopBarItem
     
     // MARK: - UI
     var body: some View {
         HStack(spacing: 10) {
             
             NavBarItemView(
-                title: "Edit",
-                isActive: isEditing,
-                action: editAction
+                title: leading.title,
+                isActive: leading.isActive,
+                action: leading.action
             )
             
             Spacer()
             
             NavBarItemView(
-                title: "Customize",
-                isActive: isCustomizing,
-                action: customizeAction
+                title: trailing.title,
+                isActive: trailing.isActive,
+                action: trailing.action
             )
             
         } //: HStack
@@ -45,10 +49,16 @@ struct TopBarView: View {
 struct TopBarView_Previews: PreviewProvider {
     static var previews: some View {
         TopBarView(
-            isEditing: false,
-            isCustomizing: false,
-            editAction: {},
-            customizeAction: {}
+            leading: .init(
+                title: "Edit",
+                isActive: false,
+                action: {}
+            ),
+            trailing: .init(
+                title: "Customize",
+                isActive: false,
+                action: {}
+            )
         )
         .previewLayout(.sizeThatFits)
         .padding()
@@ -56,10 +66,16 @@ struct TopBarView_Previews: PreviewProvider {
         .previewDisplayName("Normal")
         
         TopBarView(
-            isEditing: true,
-            isCustomizing: true,
-            editAction: {},
-            customizeAction: {}
+            leading: .init(
+                title: "Edit",
+                isActive: true,
+                action: {}
+            ),
+            trailing: .init(
+                title: "Customize",
+                isActive: true,
+                action: {}
+            )
         )
         .previewLayout(.sizeThatFits)
         .padding()

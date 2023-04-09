@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-final class WeekViewModel {
+final class WeekViewModel: ObservableObject {
     
     private var subscriptions: Set<AnyCancellable> = .init()
     private let expenseRepository: ExpenseRepositoryType

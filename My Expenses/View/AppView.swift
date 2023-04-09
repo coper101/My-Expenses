@@ -14,7 +14,7 @@ struct AppView: View {
     
     init(expenseRepository: ExpenseRepository) {
         self._expenseRepository = .init(wrappedValue: expenseRepository)
-        self._appViewModel = .init(wrappedValue: .init(expenseRepository: expenseRepository))
+        self._appViewModel = .init(wrappedValue: .init())
     }
     
     // MARK: - UI
@@ -26,10 +26,16 @@ struct AppView: View {
                 
                 // MARK: Top Bar
                 TopBarView(
-                    isEditing: appViewModel.isEditing,
-                    isCustomizing: appViewModel.isCustomizing,
-                    editAction: editAction,
-                    customizeAction: customizeAction
+                    leading: .init(
+                        title: "Edit",
+                        isActive: appViewModel.isEditing,
+                        action: editAction
+                    ),
+                    trailing: .init(
+                        title: "Customize",
+                        isActive: appViewModel.isCustomizing,
+                        action: customizeAction
+                    )
                 )
                 
                 // MARK: Content
@@ -42,7 +48,10 @@ struct AppView: View {
                             appViewModel: appViewModel
                         )
                     case .week:
-                        WeekView(expenseRepository: expenseRepository)
+                        WeekView(
+                            expenseRepository: expenseRepository,
+                            appViewModel: appViewModel
+                        )
                     } //: switch-case
                     
                 } //: ScrollView
@@ -60,19 +69,20 @@ struct AppView: View {
                 
             } //: VStack
             .fillMaxSize()
-            .background(Color.white)
             .zIndex(0)
             
             // MARK: Sheet
             if appViewModel.isCustomizing {
                 
                 CustomizeSheetView(closeAction: closeSheetAction)
+                    .environmentObject(appViewModel)
                     .transition(.move(edge: .bottom))
                     .animation(.easeOut(duration: 0.4), value: appViewModel.isCustomizing)
                     .zIndex(1)
                     .shadow(color: .black.opacity(0.05), radius: 4, x: 0, y: -2)
             } //: if
         }
+        .background(appViewModel.backgroundUsed == .color ? appViewModel.selectedBackgroundColor : Color.white)
     }
     
     // MARK: - Actions

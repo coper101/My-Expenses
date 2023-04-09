@@ -92,7 +92,7 @@ struct TodaysView: View {
         .padding(.top, 32)
         .padding(.bottom, 18)
         .padding(.horizontal, 24)
-        .background(Color.gray.opacity(0.2))
+        .background(Color.sheetGray)
         .padding(.horizontal, 21)
         .padding(.top, 8)
     }
@@ -114,7 +114,7 @@ struct TodaysExpenses_Previews: PreviewProvider {
     static var previews: some View {
         TodaysView(
             expenseRepository: expenseRepo,
-            appViewModel: .init(expenseRepository: expenseRepo)
+            appViewModel: .init()
         )
         .previewLayout(.sizeThatFits)
         .background(Color.white)

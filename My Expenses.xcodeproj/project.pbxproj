@@ -20,7 +20,6 @@
 		274014DB29D7F087003EF614 /* Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274014DA29D7F087003EF614 /* Modifier.swift */; };
 		274014DD29D7F193003EF614 /* SheetTopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274014DC29D7F193003EF614 /* SheetTopBarView.swift */; };
 		274014DF29D97544003EF614 /* CircleChipButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274014DE29D97544003EF614 /* CircleChipButtonView.swift */; };
-		274014E229D975E3003EF614 /* ColorPickerChipButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274014E129D975E3003EF614 /* ColorPickerChipButtonView.swift */; };
 		274014E429D976E3003EF614 /* ColorChipButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274014E329D976E3003EF614 /* ColorChipButtonView.swift */; };
 		274014E629D97793003EF614 /* NoColorChipButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274014E529D97793003EF614 /* NoColorChipButtonView.swift */; };
 		274014E829D97C2C003EF614 /* BackgroundOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274014E729D97C2C003EF614 /* BackgroundOptionsView.swift */; };
@@ -51,6 +50,10 @@
 		27A25A9E29BDBBEC00EC5E0D /* LocalDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A25A9D29BDBBEC00EC5E0D /* LocalDatabase.swift */; };
 		27A25AA029BDBBFE00EC5E0D /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A25A9F29BDBBFE00EC5E0D /* Logger.swift */; };
 		27D6BEE029BDBF0000E3F19D /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D6BEDF29BDBF0000E3F19D /* Expense.swift */; };
+		27F8ABA529E2AC0F00D6B2DD /* RectangularChipButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8ABA429E2AC0F00D6B2DD /* RectangularChipButtonView.swift */; };
+		27F8ABA729E2B2F900D6B2DD /* ImageChipButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8ABA629E2B2F900D6B2DD /* ImageChipButtonView.swift */; };
+		27F8ABA929E2B40D00D6B2DD /* AddImageChipButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8ABA829E2B40D00D6B2DD /* AddImageChipButtonView.swift */; };
+		27F8ABAB29E2B5E600D6B2DD /* ColorPickerDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8ABAA29E2B5E600D6B2DD /* ColorPickerDemo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +87,6 @@
 		274014DA29D7F087003EF614 /* Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifier.swift; sourceTree = "<group>"; };
 		274014DC29D7F193003EF614 /* SheetTopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetTopBarView.swift; sourceTree = "<group>"; };
 		274014DE29D97544003EF614 /* CircleChipButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleChipButtonView.swift; sourceTree = "<group>"; };
-		274014E129D975E3003EF614 /* ColorPickerChipButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerChipButtonView.swift; sourceTree = "<group>"; };
 		274014E329D976E3003EF614 /* ColorChipButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChipButtonView.swift; sourceTree = "<group>"; };
 		274014E529D97793003EF614 /* NoColorChipButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoColorChipButtonView.swift; sourceTree = "<group>"; };
 		274014E729D97C2C003EF614 /* BackgroundOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundOptionsView.swift; sourceTree = "<group>"; };
@@ -119,6 +121,10 @@
 		27A25A9D29BDBBEC00EC5E0D /* LocalDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabase.swift; sourceTree = "<group>"; };
 		27A25A9F29BDBBFE00EC5E0D /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		27D6BEDF29BDBF0000E3F19D /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		27F8ABA429E2AC0F00D6B2DD /* RectangularChipButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangularChipButtonView.swift; sourceTree = "<group>"; };
+		27F8ABA629E2B2F900D6B2DD /* ImageChipButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageChipButtonView.swift; sourceTree = "<group>"; };
+		27F8ABA829E2B40D00D6B2DD /* AddImageChipButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageChipButtonView.swift; sourceTree = "<group>"; };
+		27F8ABAA29E2B5E600D6B2DD /* ColorPickerDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerDemo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,9 +186,11 @@
 			isa = PBXGroup;
 			children = (
 				274014DE29D97544003EF614 /* CircleChipButtonView.swift */,
-				274014E129D975E3003EF614 /* ColorPickerChipButtonView.swift */,
 				274014E329D976E3003EF614 /* ColorChipButtonView.swift */,
 				274014E529D97793003EF614 /* NoColorChipButtonView.swift */,
+				27F8ABA429E2AC0F00D6B2DD /* RectangularChipButtonView.swift */,
+				27F8ABA629E2B2F900D6B2DD /* ImageChipButtonView.swift */,
+				27F8ABA829E2B40D00D6B2DD /* AddImageChipButtonView.swift */,
 			);
 			path = Chips;
 			sourceTree = "<group>";
@@ -192,6 +200,7 @@
 			children = (
 				274014E729D97C2C003EF614 /* BackgroundOptionsView.swift */,
 				274014EA29D97C64003EF614 /* HeaderOptionsView.swift */,
+				27F8ABAA29E2B5E600D6B2DD /* ColorPickerDemo.swift */,
 			);
 			path = Options;
 			sourceTree = "<group>";
@@ -487,15 +496,16 @@
 				273F5D6429C6E5F100C91C24 /* ExpenseRowView.swift in Sources */,
 				278BAB6729C5C6E400A5A005 /* DayExpense.swift in Sources */,
 				2740146529CDB267003EF614 /* CustomTextFieldView.swift in Sources */,
+				27F8ABA729E2B2F900D6B2DD /* ImageChipButtonView.swift in Sources */,
 				27D6BEE029BDBF0000E3F19D /* Expense.swift in Sources */,
 				278BAB6029C5BE7300A5A005 /* TodaysViewModel.swift in Sources */,
 				274014DD29D7F193003EF614 /* SheetTopBarView.swift in Sources */,
+				27F8ABA529E2AC0F00D6B2DD /* RectangularChipButtonView.swift in Sources */,
 				2760488F29BDE58800AB8497 /* TodaysView.swift in Sources */,
 				27A25A9E29BDBBEC00EC5E0D /* LocalDatabase.swift in Sources */,
 				27A25A6329BDBAB200EC5E0D /* My_ExpensesApp.swift in Sources */,
 				276048D429BF13C300AB8497 /* BottomBarView.swift in Sources */,
 				274014D929D7EDB5003EF614 /* SheetTabItemView.swift in Sources */,
-				274014E229D975E3003EF614 /* ColorPickerChipButtonView.swift in Sources */,
 				276048DA29BF1D9D00AB8497 /* Date.swift in Sources */,
 				274014D229D7E651003EF614 /* Icons.swift in Sources */,
 				27A25A9929BDBB1600EC5E0D /* AppViewModel.swift in Sources */,
@@ -505,9 +515,11 @@
 				2760489329BDE5BA00AB8497 /* WeekView.swift in Sources */,
 				27A25AA029BDBBFE00EC5E0D /* Logger.swift in Sources */,
 				276048DC29BF244600AB8497 /* Test.swift in Sources */,
+				27F8ABAB29E2B5E600D6B2DD /* ColorPickerDemo.swift in Sources */,
 				273F5D6829C702EF00C91C24 /* InputNavigatorView.swift in Sources */,
 				276048D229BF13BA00AB8497 /* TopBarView.swift in Sources */,
 				274014EB29D97C64003EF614 /* HeaderOptionsView.swift in Sources */,
+				27F8ABA929E2B40D00D6B2DD /* AddImageChipButtonView.swift in Sources */,
 				27A25A9C29BDBB4F00EC5E0D /* ExpenseRepository.swift in Sources */,
 				274014E629D97793003EF614 /* NoColorChipButtonView.swift in Sources */,
 				274014E829D97C2C003EF614 /* BackgroundOptionsView.swift in Sources */,

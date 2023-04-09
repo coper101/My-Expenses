@@ -6,11 +6,15 @@
 //
 
 import Combine
+import SwiftUI
+
+enum BackgroundUsed {
+    case color
+    case image
+}
 
 final class AppViewModel: ObservableObject {
-    
-    let expenseRepository: ExpenseRepositoryType
-    
+        
     // MARK: Data
     @Published var weekExpenses: [WeekExpense] = []
     
@@ -19,9 +23,10 @@ final class AppViewModel: ObservableObject {
     @Published var isNewItemFocused: Bool = false
     @Published var isEditing: Bool = false
     @Published var isCustomizing: Bool = false
-
-    init(expenseRepository: ExpenseRepositoryType) {
-        self.expenseRepository = expenseRepository
-    }
+    
+    @Published var selectedBackgroundColor: Color = .white
+    @Published var selectedBackgroundImage: UIImage?
+    
+    @Published var backgroundUsed: BackgroundUsed = .color
     
 }

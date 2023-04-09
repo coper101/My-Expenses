@@ -20,6 +20,8 @@ enum SheetContent: String, Identifiable, CaseIterable {
 
 struct CustomizeSheetView: View {
     // MARK: - Props
+    @EnvironmentObject var appViewModel: AppViewModel
+    
     @State var selectedSheetContent: SheetContent = .background
     var closeAction: Action
     
@@ -45,7 +47,11 @@ struct CustomizeSheetView: View {
 
                     switch selectedSheetContent {
                     case .background:
-                        BackgroundOptionsView()
+                        BackgroundOptionsView(
+                            backgroundUsed: $appViewModel.backgroundUsed,
+                            selectedColor: $appViewModel.selectedBackgroundColor,
+                            selectedImage: $appViewModel.selectedBackgroundImage
+                        )
                     case .sheet:
                         Text("TODO")
                     case .text:
@@ -73,6 +79,7 @@ struct CustomizeSheetView: View {
 struct CustomizeSheetView_Previews: PreviewProvider {
     static var previews: some View {
         CustomizeSheetView(closeAction: {})
+            .environmentObject(AppViewModel())
             .previewLayout(.sizeThatFits)
             .padding()
             .background(Color.green)

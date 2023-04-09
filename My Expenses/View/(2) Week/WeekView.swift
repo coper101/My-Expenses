@@ -9,10 +9,15 @@ import SwiftUI
 
 struct WeekView: View {
     // MARK: - Props
-    private let viewModel: WeekViewModel
+    @ObservedObject var appViewModel: AppViewModel
+    @StateObject private var viewModel: WeekViewModel
     
-    init(expenseRepository: ExpenseRepositoryType) {
-        self.viewModel = .init(expenseRepository: expenseRepository)
+    init(
+        expenseRepository: ExpenseRepositoryType,
+        appViewModel: AppViewModel
+    ) {
+        self._viewModel = .init(wrappedValue: .init(expenseRepository: expenseRepository))
+        self.appViewModel = appViewModel
     }
     
     // MARK: - UI
@@ -32,8 +37,13 @@ struct WeekView: View {
 
 // MARK: - Preview
 struct WeekView_Previews: PreviewProvider {
+    static var expenseRepo: ExpenseRepository = TestData.repository
+
     static var previews: some View {
-        WeekView(expenseRepository: TestData.repository)
-            .previewLayout(.sizeThatFits)
+        WeekView(
+            expenseRepository: expenseRepo,
+            appViewModel: .init()
+        )
+        .previewLayout(.sizeThatFits)
     }
 }

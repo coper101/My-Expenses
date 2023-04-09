@@ -5,8 +5,8 @@
 //  Created by Wind Versi on 18/3/23.
 //
 
-import Foundation
 import Combine
+import SwiftUI
 
 final class TodaysViewModel: ObservableObject {
     
@@ -18,7 +18,7 @@ final class TodaysViewModel: ObservableObject {
     @Published var expenses: [Expense] = []
     
     // MARK: UI
-
+    
     var totalPrice: String {
         getTotalPrice(items: todaysExpense?.items ?? [])
     }

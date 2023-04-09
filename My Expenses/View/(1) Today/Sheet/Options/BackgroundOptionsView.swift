@@ -9,10 +9,9 @@ import SwiftUI
 
 struct BackgroundOptionsView: View {
     // MARK: - Props
-    @State var hasSelectedColorOption: Bool = false
-    @State var selectedColor: Color?
-    
-    @State var hasSelectedImageOption: Bool = false
+    @Binding var backgroundUsed: BackgroundUsed
+    @Binding var selectedColor: Color
+    @Binding var selectedImage: UIImage?
     
     // MARK: - UI
     var body: some View {
@@ -24,18 +23,16 @@ struct BackgroundOptionsView: View {
                 
                 ScrollView {
                     HStack(spacing: 26) {
-                        NoColorChipButtonView(
-                            isActive: !hasSelectedColorOption,
-                            action: {
-                                hasSelectedColorOption = false
-                            }
-                        )
-                        ColorPickerChipButtonView(
-                            isActive: hasSelectedColorOption,
-                            action: {
-                                hasSelectedColorOption = true
-                            }
-                        )
+                        NoColorChipButtonView(isActive: backgroundUsed == .image || selectedColor == .white) {
+                            selectedColor = .white
+                        }
+                        CircleChipButtonView(
+                            isActive: backgroundUsed != .image && selectedColor != .white,
+                            action: nil
+                        ) {
+                            ColorPicker("Color Picker", selection: $selectedColor)
+                                .labelsHidden()
+                        }
                     }
                 } //: ScrollView
                 .frame(height: 47)
@@ -47,7 +44,14 @@ struct BackgroundOptionsView: View {
                 
                 ScrollView {
                     HStack(spacing: 26) {
-                        
+                        HStack(spacing: 26) {
+                            AddImageChipButtonView(action: {})
+                            ImageChipButtonView(
+                                isActive: true,
+                                action: {},
+                                image: UIImage(named: Icons.backgroundImage1.rawValue)!
+                            )
+                        }
                     }
                 } //: ScrollView
                 .frame(height: 82)
@@ -61,8 +65,12 @@ struct BackgroundOptionsView: View {
 // MARK: - Preview
 struct BackgroundOptionsView_Previews: PreviewProvider {
     static var previews: some View {
-        BackgroundOptionsView()
-            .previewLayout(.sizeThatFits)
-            .padding()
+        BackgroundOptionsView(
+            backgroundUsed: .constant(.color),
+            selectedColor: .constant(.white),
+            selectedImage: .constant(nil)
+        )
+        .previewLayout(.sizeThatFits)
+        .padding()
     }
 }

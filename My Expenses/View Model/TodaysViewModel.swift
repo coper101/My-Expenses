@@ -18,7 +18,6 @@ final class TodaysViewModel: ObservableObject {
     @Published var expenses: [Expense] = []
     
     // MARK: UI
-    
     var totalPrice: String {
         getTotalPrice(items: todaysExpense?.items ?? [])
     }

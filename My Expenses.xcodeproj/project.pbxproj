@@ -54,6 +54,8 @@
 		27F8ABA729E2B2F900D6B2DD /* ImageChipButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8ABA629E2B2F900D6B2DD /* ImageChipButtonView.swift */; };
 		27F8ABA929E2B40D00D6B2DD /* AddImageChipButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8ABA829E2B40D00D6B2DD /* AddImageChipButtonView.swift */; };
 		27F8ABAB29E2B5E600D6B2DD /* ColorPickerDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8ABAA29E2B5E600D6B2DD /* ColorPickerDemo.swift */; };
+		27F8ABB929E65AFE00D6B2DD /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8ABB829E65AFE00D6B2DD /* ImagePickerView.swift */; };
+		27F8ABBB29E6617100D6B2DD /* Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8ABBA29E6617000D6B2DD /* Dimensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +127,8 @@
 		27F8ABA629E2B2F900D6B2DD /* ImageChipButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageChipButtonView.swift; sourceTree = "<group>"; };
 		27F8ABA829E2B40D00D6B2DD /* AddImageChipButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageChipButtonView.swift; sourceTree = "<group>"; };
 		27F8ABAA29E2B5E600D6B2DD /* ColorPickerDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerDemo.swift; sourceTree = "<group>"; };
+		27F8ABB829E65AFE00D6B2DD /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		27F8ABBA29E6617000D6B2DD /* Dimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +161,7 @@
 			children = (
 				2740146029CDABE1003EF614 /* GuideLineView.swift */,
 				2740146429CDB267003EF614 /* CustomTextFieldView.swift */,
+				27F8ABB829E65AFE00D6B2DD /* ImagePickerView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -357,6 +362,7 @@
 				276048D929BF1D9D00AB8497 /* Date.swift */,
 				273F5D6529C6EB7900C91C24 /* Numbers.swift */,
 				274014DA29D7F087003EF614 /* Modifier.swift */,
+				27F8ABBA29E6617000D6B2DD /* Dimensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -516,6 +522,7 @@
 				27A25AA029BDBBFE00EC5E0D /* Logger.swift in Sources */,
 				276048DC29BF244600AB8497 /* Test.swift in Sources */,
 				27F8ABAB29E2B5E600D6B2DD /* ColorPickerDemo.swift in Sources */,
+				27F8ABBB29E6617100D6B2DD /* Dimensions.swift in Sources */,
 				273F5D6829C702EF00C91C24 /* InputNavigatorView.swift in Sources */,
 				276048D229BF13BA00AB8497 /* TopBarView.swift in Sources */,
 				274014EB29D97C64003EF614 /* HeaderOptionsView.swift in Sources */,
@@ -526,6 +533,7 @@
 				276048CE29BF118D00AB8497 /* Frame.swift in Sources */,
 				2760489529BDE7D800AB8497 /* Text.swift in Sources */,
 				276048D629BF19B200AB8497 /* DayExpenseBoxView.swift in Sources */,
+				27F8ABB929E65AFE00D6B2DD /* ImagePickerView.swift in Sources */,
 				2740146129CDABE1003EF614 /* GuideLineView.swift in Sources */,
 				274014E429D976E3003EF614 /* ColorChipButtonView.swift in Sources */,
 				273F5D6629C6EB7900C91C24 /* Numbers.swift in Sources */,

@@ -49,8 +49,16 @@ struct CustomizeSheetView: View {
                     case .background:
                         BackgroundOptionsView(
                             backgroundUsed: $appViewModel.backgroundUsed,
+                            /// Color
                             selectedColor: $appViewModel.selectedBackgroundColor,
-                            selectedImage: $appViewModel.selectedBackgroundImage
+                            colorSelection: appViewModel.colorSelections,
+                            selectedColorAction: selectColorAction,
+                            pickColorAction: pickColorAction,
+                            /// Image
+                            selectedImage: $appViewModel.selectedBackgroundImage,
+                            imagesSelection: appViewModel.imageSelections,
+                            pickImageAction: pickImageAction,
+                            selectedImageAction: selectImageAction
                         )
                     case .sheet:
                         Text("TODO")
@@ -73,6 +81,21 @@ struct CustomizeSheetView: View {
     }
     
     // MARK: - Actions
+    func pickImageAction() {
+        appViewModel.isImagePickerShown = true
+    }
+    
+    func selectImageAction(date: Date) {
+        appViewModel.selectBackgroundImage(with: date)
+    }
+    
+    func pickColorAction(color: Color) {
+        appViewModel.addBackgroundColor(color)
+    }
+    
+    func selectColorAction(date: Date) {
+        appViewModel.selectBackgroundColor(with: date)
+    }
 }
 
 // MARK: - Preview

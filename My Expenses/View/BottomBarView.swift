@@ -17,7 +17,9 @@ enum TabItem: String {
 
 struct BottomBarView: View {
     // MARK: - Props
+    @Environment(\.dimensions) var dimensions
     @Binding var selectedTab: TabItem
+    var backgroundColor: Color = .white
     
     // MARK: - UI
     var body: some View {
@@ -40,8 +42,9 @@ struct BottomBarView: View {
         } //: HStack
         .padding(.horizontal, 21)
         .padding(.vertical, 16)
+        .padding(.bottom, dimensions.insets.bottom)
         .fillMaxWidth()
-        .background(Color.white)
+        .background(backgroundColor)
     }
     
     // MARK: - Actions

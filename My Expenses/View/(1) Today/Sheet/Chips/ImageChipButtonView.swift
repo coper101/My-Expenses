@@ -22,8 +22,8 @@ struct ImageChipButtonView: View {
             Image(uiImage: image)
                 .resizable()
                 .scaledToFill()
-                .clipShape(RoundedRectangle(cornerRadius: 10))
                 .frame(width: 118 - 15, height: 82 - 15)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
         }
     }
     

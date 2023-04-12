@@ -15,8 +15,10 @@ struct TopBarItem {
 
 struct TopBarView: View {
     // MARK: - Props
+    @Environment(\.dimensions) var dimensions
     var leading: TopBarItem
     var trailing: TopBarItem
+    var backgroundColor: Color = .white
     
     // MARK: - UI
     var body: some View {
@@ -38,8 +40,9 @@ struct TopBarView: View {
             
         } //: HStack
         .padding(.horizontal, 21)
-        .frame(height: 49)
-        .background(Color.white)
+        .frame(height: dimensions.topBarHeight)
+        .padding(.top, dimensions.insets.top)
+        .background(backgroundColor)
     }
     
     // MARK: - Actions

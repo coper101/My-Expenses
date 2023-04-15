@@ -41,6 +41,7 @@ struct TodaysView: View {
                         isEditing: appViewModel.isEditing,
                         deleteAction: viewModel.didTapDeleteExpense
                     )
+                    .background(appViewModel.selectedSheetItemBackgroundColor)
                 }
             }
             
@@ -92,7 +93,7 @@ struct TodaysView: View {
         .padding(.top, 32)
         .padding(.bottom, 18)
         .padding(.horizontal, 24)
-        .background(Color.sheetGray)
+        .background(appViewModel.selectedSheetBackgroundColor)
         .padding(.horizontal, 21)
         .padding(.top, 8)
     }

@@ -61,7 +61,18 @@ struct CustomizeSheetView: View {
                             selectedImageAction: selectImageAction
                         )
                     case .sheet:
-                        Text("TODO")
+                        SheetOptionsView(
+                            /// Background
+                            selectedBackgroundColor: $appViewModel.selectedSheetBackgroundColor,
+                            backgroundColorSelection: appViewModel.sheetBackgroundColorSelections,
+                            selectedBackgroundColorAction: selectedBackgroundColorAction,
+                            pickBackgroundColorAction: pickBackgroundColorAction,
+                            /// Item Background
+                            selectedItemBackgroundColor: $appViewModel.selectedSheetItemBackgroundColor,
+                            itemBackgroundColorSelection: appViewModel.sheetItemBackgroundColorSelections,
+                            selectedItemBackgroundColorAction: selectedItemBackgroundColorAction,
+                            pickItemBackgroundColorAction: pickItemBackgroundColorAction
+                        )
                     case .text:
                         Text("TODO")
                     case .appIcon:
@@ -81,6 +92,7 @@ struct CustomizeSheetView: View {
     }
     
     // MARK: - Actions
+    /// [1] Background Option
     func pickImageAction() {
         appViewModel.isImagePickerShown = true
     }
@@ -90,12 +102,30 @@ struct CustomizeSheetView: View {
     }
     
     func pickColorAction(color: Color) {
-        appViewModel.addBackgroundColor(color)
+        appViewModel.addColor(color, for: .background)
     }
     
     func selectColorAction(date: Date) {
-        appViewModel.selectBackgroundColor(with: date)
+        appViewModel.selectColor(with: date, for: .background)
     }
+    
+    /// [2] Sheet Option
+    func pickBackgroundColorAction(color: Color) {
+        appViewModel.addColor(color, for: .sheetBackground)
+    }
+    
+    func selectedBackgroundColorAction(date: Date) {
+        appViewModel.selectColor(with: date, for: .sheetBackground)
+    }
+    
+    func pickItemBackgroundColorAction(color: Color) {
+        appViewModel.addColor(color, for: .sheetItemBackground)
+    }
+    
+    func selectedItemBackgroundColorAction(date: Date) {
+        appViewModel.selectColor(with: date, for: .sheetItemBackground)
+    }
+    
 }
 
 // MARK: - Preview

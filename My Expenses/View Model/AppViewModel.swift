@@ -8,6 +8,12 @@
 import Combine
 import SwiftUI
 
+enum SheetOption {
+    case background
+    case sheetBackground
+    case sheetItemBackground
+}
+
 enum BackgroundUsed {
     case color
     case image
@@ -59,6 +65,13 @@ final class AppViewModel: ObservableObject {
     @Published var imageSelections: [ImageSelection] = []
     
     /// [2] Sheet
+    @Published var selectedSheetBackgroundColor: Color = .sheetGray
+    @Published var sheetBackgroundColorSelections: [ColorSelection] = [
+        .init(date: .init(), color: .sheetGray, isSelected: true)
+    ]
+    
+    @Published var selectedSheetItemBackgroundColor: Color = .clear
+    @Published var sheetItemBackgroundColorSelections: [ColorSelection] = []
     
     
     init() {
@@ -67,6 +80,8 @@ final class AppViewModel: ObservableObject {
     
     // MARK: Observers
     func observe() {
+        
+        /// [1A]
         $colorSelections
             .drop(while: { $0.first(where: { $0.isSelected }) == nil })
             .sink { [weak self] selections in
@@ -81,7 +96,7 @@ final class AppViewModel: ObservableObject {
             }
             .store(in: &subscriptions)
 
-        
+        /// [1B]
         $imageSelections
             .drop(while: { $0.first(where: { $0.isSelected }) == nil })
             .sink { [weak self] selections in
@@ -93,10 +108,38 @@ final class AppViewModel: ObservableObject {
                 self.backgroundUsed = .image
             }
             .store(in: &subscriptions)
+        
+        /// [2A]
+        $sheetBackgroundColorSelections
+            .drop(while: { $0.first(where: { $0.isSelected }) == nil })
+            .sink { [weak self] selections in
+                guard let self else {
+                    return
+                }
+                guard let selectedColor = selections.first(where: { $0.isSelected }) else {
+                    return
+                }
+                self.selectedSheetBackgroundColor = selectedColor.color
+            }
+            .store(in: &subscriptions)
+        
+        /// [2B]
+        $sheetItemBackgroundColorSelections
+            .drop(while: { $0.first(where: { $0.isSelected }) == nil })
+            .sink { [weak self] selections in
+                guard let self else {
+                    return
+                }
+                guard let selectedColor = selections.first(where: { $0.isSelected }) else {
+                    return
+                }
+                self.selectedSheetItemBackgroundColor = selectedColor.color
+            }
+            .store(in: &subscriptions)
     }
     
     // MARK: Events
-    /// Background Image
+    /// [1A] Background Image
     func addBackgroundImage(_ image: UIImage) {
         deselectSelectedBackgroundImage()
         imageSelections.insert(
@@ -116,26 +159,63 @@ final class AppViewModel: ObservableObject {
     private func deselectSelectedBackgroundImage() {
         imageSelections.indices.forEach { imageSelections[$0].isSelected = false }
     }
-    
-    /// Background Color
-    func addBackgroundColor(_ color: Color) {
-        deselectSelectedColor()
-        colorSelections.insert(
-            .init(date: .init(), color: color, isSelected: true),
-            at: 0
-        )
-    }
-    
-    func selectBackgroundColor(with date: Date) {
-        deselectSelectedColor()
-        guard let selectionIndex = colorSelections.firstIndex(where: { $0.date == date }) else {
-            return
+        
+    /// [1B, 2A, 2B]  Color
+    func addColor(_ color: Color, for option: SheetOption) {
+        switch option {
+        case .background:
+            deselectSelectedColor(for: .background)
+            colorSelections.insert(
+                .init(date: .init(), color: color, isSelected: true),
+                at: 0
+            )
+        case .sheetBackground:
+            deselectSelectedColor(for: .sheetBackground)
+            sheetBackgroundColorSelections.insert(
+                .init(date: .init(), color: color, isSelected: true),
+                at: 0
+            )
+        case .sheetItemBackground:
+            deselectSelectedColor(for: .sheetItemBackground)
+            sheetItemBackgroundColorSelections.insert(
+                .init(date: .init(), color: color, isSelected: true),
+                at: 0
+            )
         }
-        colorSelections[selectionIndex].isSelected = true
     }
     
-    private func deselectSelectedColor() {
-        colorSelections.indices.forEach { colorSelections[$0].isSelected = false }
+    func selectColor(with date: Date, for option: SheetOption) {
+        switch option {
+        case .background:
+            deselectSelectedColor(for: .background)
+            guard let selectionIndex = colorSelections.firstIndex(where: { $0.date == date }) else {
+                return
+            }
+            colorSelections[selectionIndex].isSelected = true
+        case .sheetBackground:
+            deselectSelectedColor(for: .sheetBackground)
+            guard let selectionIndex = sheetBackgroundColorSelections.firstIndex(where: { $0.date == date }) else {
+                return
+            }
+            sheetBackgroundColorSelections[selectionIndex].isSelected = true
+        case .sheetItemBackground:
+            deselectSelectedColor(for: .sheetItemBackground)
+            guard let selectionIndex = sheetItemBackgroundColorSelections.firstIndex(where: { $0.date == date }) else {
+                return
+            }
+            sheetItemBackgroundColorSelections[selectionIndex].isSelected = true
+        }
+    }
+    
+    private func deselectSelectedColor(for option: SheetOption) {
+        switch option {
+        case .background:
+            colorSelections.indices.forEach { colorSelections[$0].isSelected = false }
+        case .sheetBackground:
+            sheetBackgroundColorSelections.indices.forEach { sheetBackgroundColorSelections[$0].isSelected = false }
+        case .sheetItemBackground:
+            sheetItemBackgroundColorSelections.indices.forEach { sheetItemBackgroundColorSelections[$0].isSelected = false }
+        }
     }
     
 }

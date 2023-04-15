@@ -39,6 +39,7 @@
 		278BAB6229C5BE8300A5A005 /* WeekViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278BAB6129C5BE8300A5A005 /* WeekViewModel.swift */; };
 		278BAB6529C5C6C800A5A005 /* WeekExpense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278BAB6429C5C6C800A5A005 /* WeekExpense.swift */; };
 		278BAB6729C5C6E400A5A005 /* DayExpense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278BAB6629C5C6E400A5A005 /* DayExpense.swift */; };
+		27A199FD29EA928B006775E5 /* SheetOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A199FC29EA928B006775E5 /* SheetOptionsView.swift */; };
 		27A25A6329BDBAB200EC5E0D /* My_ExpensesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A25A6229BDBAB200EC5E0D /* My_ExpensesApp.swift */; };
 		27A25A6C29BDBAB400EC5E0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27A25A6B29BDBAB400EC5E0D /* Assets.xcassets */; };
 		27A25A7A29BDBAB400EC5E0D /* My_ExpensesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A25A7929BDBAB400EC5E0D /* My_ExpensesTests.swift */; };
@@ -108,6 +109,7 @@
 		278BAB6129C5BE8300A5A005 /* WeekViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekViewModel.swift; sourceTree = "<group>"; };
 		278BAB6429C5C6C800A5A005 /* WeekExpense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekExpense.swift; sourceTree = "<group>"; };
 		278BAB6629C5C6E400A5A005 /* DayExpense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayExpense.swift; sourceTree = "<group>"; };
+		27A199FC29EA928B006775E5 /* SheetOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetOptionsView.swift; sourceTree = "<group>"; };
 		27A25A5F29BDBAB200EC5E0D /* My Expenses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Expenses.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27A25A6229BDBAB200EC5E0D /* My_ExpensesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_ExpensesApp.swift; sourceTree = "<group>"; };
 		27A25A6B29BDBAB400EC5E0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				274014E729D97C2C003EF614 /* BackgroundOptionsView.swift */,
+				27A199FC29EA928B006775E5 /* SheetOptionsView.swift */,
 				274014EA29D97C64003EF614 /* HeaderOptionsView.swift */,
 				27F8ABAA29E2B5E600D6B2DD /* ColorPickerDemo.swift */,
 			);
@@ -533,6 +536,7 @@
 				276048CE29BF118D00AB8497 /* Frame.swift in Sources */,
 				2760489529BDE7D800AB8497 /* Text.swift in Sources */,
 				276048D629BF19B200AB8497 /* DayExpenseBoxView.swift in Sources */,
+				27A199FD29EA928B006775E5 /* SheetOptionsView.swift in Sources */,
 				27F8ABB929E65AFE00D6B2DD /* ImagePickerView.swift in Sources */,
 				2740146129CDABE1003EF614 /* GuideLineView.swift in Sources */,
 				274014E429D976E3003EF614 /* ColorChipButtonView.swift in Sources */,

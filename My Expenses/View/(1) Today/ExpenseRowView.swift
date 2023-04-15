@@ -35,18 +35,15 @@ struct ExpenseRowView: View {
     private let viewModel: ExpenseViewModel
     let isEditing: Bool
     let deleteAction: DeleteAction
-    let background: Color?
     
     init(
         expense: ExpenseType,
         isEditing: Bool,
-        deleteAction: @escaping DeleteAction,
-        background: Color? = nil
+        deleteAction: @escaping DeleteAction
     ) {
         self.viewModel = .init(expense)
         self.isEditing = isEditing
         self.deleteAction = deleteAction
-        self.background = background
     }
     
     // MARK: - UI
@@ -117,7 +114,6 @@ struct ExpenseRowView: View {
         .padding(.vertical, 22)
         .padding(.leading, 4)
         .padding(.trailing, 15)
-        .background(background ?? .clear)
     }
     
     // MARK: - Actions
@@ -129,8 +125,7 @@ struct ExpenseRowView_Previews: PreviewProvider {
         ExpenseRowView(
             expense: TestData.sampleExpense,
             isEditing: false,
-            deleteAction: { _ in },
-            background: nil
+            deleteAction: { _ in }
         )
         .previewLayout(.sizeThatFits)
         .previewDisplayName("Normal")
@@ -138,8 +133,7 @@ struct ExpenseRowView_Previews: PreviewProvider {
         ExpenseRowView(
             expense: TestData.sampleExpense,
             isEditing: false,
-            deleteAction: { _ in },
-            background: .blue
+            deleteAction: { _ in }
         )
         .previewLayout(.sizeThatFits)
         .previewDisplayName("Normal")
@@ -147,8 +141,7 @@ struct ExpenseRowView_Previews: PreviewProvider {
         ExpenseRowView(
             expense: TestData.sampleExpense,
             isEditing: true,
-            deleteAction: { _ in },
-            background: nil
+            deleteAction: { _ in }
         )
         .previewLayout(.sizeThatFits)
         .previewDisplayName("Editing")

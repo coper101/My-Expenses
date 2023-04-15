@@ -55,11 +55,11 @@ struct NewItemInputView: View {
             CustomTextFieldView(
                 text: $name,
                 isFocused: $isFocused,
+                keyboardType: .default,
+                returnKeyType: .done,
                 placeholder: "Enter Item . . .",
                 onCommit: {
-                    print("name: \(name) price \(price)")
                     commitAction(name, price)
-                    
                 }
             )
             .textStyle(
@@ -74,6 +74,8 @@ struct NewItemInputView: View {
             CustomTextFieldView(
                 text: $price,
                 isFocused: $isFocusedPrice,
+                keyboardType: .decimalPad,
+                returnKeyType: .done,
                 placeholder: "$0",
                 onCommit: {
                     commitAction(name, price)

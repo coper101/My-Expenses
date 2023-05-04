@@ -42,6 +42,7 @@ struct NewItemInputView: View {
     // MARK: - Props
     @State private var name: String = ""
     @State private var price: String = ""
+    var font: Fonts
     @Binding var isFocused: Bool
     @State private var isFocusedPrice: Bool = false
 
@@ -55,6 +56,8 @@ struct NewItemInputView: View {
             CustomTextFieldView(
                 text: $name,
                 isFocused: $isFocused,
+                font: font,
+                fontSize: 15,
                 keyboardType: .default,
                 returnKeyType: .done,
                 placeholder: "Enter Item . . .",
@@ -62,11 +65,7 @@ struct NewItemInputView: View {
                     commitAction(name, price)
                 }
             )
-            .textStyle(
-                foregroundColor: .init(red: 242/255, green: 242/255, blue: 242/255),
-                fontWeight: .semibold,
-                size: 15
-            )
+            .foregroundColor(.init(red: 242/255, green: 242/255, blue: 242/255))
             
             Spacer()
             
@@ -74,6 +73,8 @@ struct NewItemInputView: View {
             CustomTextFieldView(
                 text: $price,
                 isFocused: $isFocusedPrice,
+                font: font,
+                fontSize: 15,
                 keyboardType: .decimalPad,
                 returnKeyType: .done,
                 placeholder: "$0",
@@ -81,20 +82,21 @@ struct NewItemInputView: View {
                     commitAction(name, price)
                 }
             )
-            .textStyle(
-                foregroundColor: .black,
-                colorOpacity: 0.5,
-                fontWeight: .semibold,
-                size: 15,
-                textAlignment: .trailing
-            )
+            .foregroundColor(.black.opacity(0.5))
             .frame(maxWidth: 44)
             
         }
         .padding(.horizontal, 24)
         .frame(height: 63)
-        .background(Color.gray.opacity(0.2))
+        .background(Color.sheetGray)
         .fillMaxWidth()
+        .dynamicOverlay(alignment: .top) {
+            Rectangle()
+                .fill(Color.black.opacity(0.05))
+                .frame(height: 1)
+                .fillMaxWidth()
+                .offset(y: -1)
+        }
     }
     
     // MARK: - Actions
@@ -104,9 +106,11 @@ struct NewItemInputView: View {
 struct NewItemInputView_Previews: PreviewProvider {
     static var previews: some View {
         NewItemInputView(
+            font: .sfProTextSemibold,
             isFocused: .constant(true),
             commitAction: { _, _ in }
         )
         .previewLayout(.sizeThatFits)
+        .padding()
     }
 }

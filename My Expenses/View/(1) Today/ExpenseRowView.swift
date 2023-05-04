@@ -34,15 +34,24 @@ struct ExpenseRowView: View {
     
     private let viewModel: ExpenseViewModel
     let isEditing: Bool
+    let fontSize: CGFloat
+    let fontColor: Color
+    let font: Fonts
     let deleteAction: DeleteAction
     
     init(
         expense: ExpenseType,
         isEditing: Bool,
+        fontSize: CGFloat,
+        fontColor: Color,
+        font: Fonts,
         deleteAction: @escaping DeleteAction
     ) {
         self.viewModel = .init(expense)
         self.isEditing = isEditing
+        self.fontSize = fontSize
+        self.fontColor = fontColor
+        self.font = font
         self.deleteAction = deleteAction
     }
     
@@ -63,23 +72,25 @@ struct ExpenseRowView: View {
                 } else {
                     Text(viewModel.time)
                         .textStyle(
-                            foregroundColor: .black,
+                            foregroundColor: fontColor,
                             colorOpacity: 0.2,
-                            fontWeight: .semibold,
-                            size: 12
+                            font: font,
+                            size: fontSize - 5
                         )
                         .padding(.bottom, 2)
                 }
             }
-            .frame(width: 38, alignment: .trailing)
+            .frame(minWidth: 38, alignment: .center)
+            .layoutPriority(1)
 
             // MARK: Name
             Text(viewModel.name)
                 .textStyle(
-                    foregroundColor: .black,
-                    fontWeight: .semibold,
-                    size: 18
+                    foregroundColor: fontColor,
+                    font: font,
+                    size: fontSize
                 )
+                .layoutPriority(1)
 
             // MARK: Guide Line
             GeometryReader { geometry in
@@ -105,10 +116,11 @@ struct ExpenseRowView: View {
             // MARK: Price
             Text(viewModel.price)
                 .textStyle(
-                    foregroundColor: .black,
-                    fontWeight: .semibold,
-                    size: 14
+                    foregroundColor: fontColor,
+                    font: font,
+                    size: fontSize - 4
                 )
+                .layoutPriority(1)
 
         } //: HStack
         .padding(.vertical, 22)
@@ -125,14 +137,9 @@ struct ExpenseRowView_Previews: PreviewProvider {
         ExpenseRowView(
             expense: TestData.sampleExpense,
             isEditing: false,
-            deleteAction: { _ in }
-        )
-        .previewLayout(.sizeThatFits)
-        .previewDisplayName("Normal")
-        
-        ExpenseRowView(
-            expense: TestData.sampleExpense,
-            isEditing: false,
+            fontSize: 28,
+            fontColor: .black,
+            font: .sfProTextSemibold,
             deleteAction: { _ in }
         )
         .previewLayout(.sizeThatFits)
@@ -141,6 +148,9 @@ struct ExpenseRowView_Previews: PreviewProvider {
         ExpenseRowView(
             expense: TestData.sampleExpense,
             isEditing: true,
+            fontSize: 28,
+            fontColor: .black,
+            font: .sfProTextSemibold,
             deleteAction: { _ in }
         )
         .previewLayout(.sizeThatFits)

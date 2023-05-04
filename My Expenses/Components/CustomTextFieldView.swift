@@ -11,6 +11,8 @@ struct CustomTextFieldView: UIViewRepresentable {
     @Binding var text: String
     @Binding var isFocused: Bool
     @State private var focusCount = 0
+    let font: Fonts
+    let fontSize: CGFloat
     let keyboardType: UIKeyboardType
     let returnKeyType: UIReturnKeyType
     var placeholder: String
@@ -20,6 +22,7 @@ struct CustomTextFieldView: UIViewRepresentable {
         let textField = UITextField(frame: .zero)
         textField.delegate = context.coordinator
         textField.placeholder = placeholder
+        textField.font = .init(name: font.value, size: fontSize)
         textField.returnKeyType = returnKeyType
         textField.keyboardType = keyboardType
         return textField

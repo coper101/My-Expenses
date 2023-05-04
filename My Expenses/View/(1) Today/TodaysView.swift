@@ -21,15 +21,19 @@ struct TodaysView: View {
     }
 
     // MARK: - UI
+    var fontSize: CGFloat {
+        .init(appViewModel.fontSize)
+    }
+    
     var content: some View {
         VStack(alignment: .leading, spacing: 11) {
 
             // MARK: Title
             Text("Today's Expenses")
                 .textStyle(
-                    foregroundColor: .black,
+                    foregroundColor: appViewModel.selectedFontColor,
                     colorOpacity: 0.2,
-                    fontWeight: .semibold,
+                    font: appViewModel.selectedFont,
                     size: 24
                 )
 
@@ -39,6 +43,9 @@ struct TodaysView: View {
                     ExpenseRowView(
                         expense: $0,
                         isEditing: appViewModel.isEditing,
+                        fontSize: fontSize,
+                        fontColor: appViewModel.selectedFontColor,
+                        font: appViewModel.selectedFont,
                         deleteAction: viewModel.didTapDeleteExpense
                     )
                     .background(appViewModel.selectedSheetItemBackgroundColor)
@@ -51,9 +58,9 @@ struct TodaysView: View {
                 // MARK: Title
                 Text("Total")
                     .textStyle(
-                        foregroundColor: .black,
-                        fontWeight: .semibold,
-                        size: 18
+                        foregroundColor: appViewModel.selectedFontColor,
+                        font: appViewModel.selectedFont,
+                        size: fontSize
                     )
 
                 // MARK: Guide Line
@@ -64,9 +71,9 @@ struct TodaysView: View {
                 // MARK: Price
                 Text(viewModel.totalPrice)
                     .textStyle(
-                        foregroundColor: .black,
-                        fontWeight: .semibold,
-                        size: 14
+                        foregroundColor: appViewModel.selectedFontColor,
+                        font: appViewModel.selectedFont,
+                        size: fontSize - 4
                     )
 
             } //: HStack
@@ -85,6 +92,7 @@ struct TodaysView: View {
             
             // MARK: Input
             InputNavigatorView(
+                font: appViewModel.selectedFont,
                 enterItemAction: enterItemAction,
                 scribbleAction: scribbleAction
             )

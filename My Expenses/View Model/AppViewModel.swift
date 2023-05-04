@@ -12,6 +12,7 @@ enum SheetOption {
     case background
     case sheetBackground
     case sheetItemBackground
+    case textFontColor
 }
 
 enum BackgroundUsed {
@@ -35,6 +36,13 @@ struct ColorSelection: Selection {
     var color: Color
     var isSelected: Bool
 }
+
+struct FontSelection: Selection {
+    var date: Date
+    var font: Fonts
+    var isSelected: Bool
+}
+
 
 final class AppViewModel: ObservableObject {
     
@@ -73,6 +81,20 @@ final class AppViewModel: ObservableObject {
     @Published var selectedSheetItemBackgroundColor: Color = .clear
     @Published var sheetItemBackgroundColorSelections: [ColorSelection] = []
     
+    /// [3] Text
+    @Published var selectedFontColor: Color = .black
+    @Published var fontColorSelection: [ColorSelection] = [
+        .init(date: .init(), color: .black, isSelected: true)
+    ]
+
+    @Published var fontSize: Double = 18
+    
+    @Published var selectedFont: Fonts = .sfProTextSemibold
+    @Published var fontSelections: [FontSelection] = [
+        .init(date: .init(), font: .sfProTextSemibold, isSelected: true),
+        .init(date: Calendar.current.date(byAdding: .day, value: -1, to: .init())!, font: .schoolbell, isSelected: false),
+        .init(date: Calendar.current.date(byAdding: .day, value: -2, to: .init())!, font: .shadowsIntoLight, isSelected: false)
+    ]
     
     init() {
         observe()
@@ -136,6 +158,34 @@ final class AppViewModel: ObservableObject {
                 self.selectedSheetItemBackgroundColor = selectedColor.color
             }
             .store(in: &subscriptions)
+        
+        /// [3A]
+        $fontColorSelection
+            .drop(while: { $0.first(where: { $0.isSelected }) == nil })
+            .sink { [weak self] selections in
+                guard let self else {
+                    return
+                }
+                guard let selection = selections.first(where: { $0.isSelected }) else {
+                    return
+                }
+                self.selectedFontColor = selection.color
+            }
+            .store(in: &subscriptions)
+        
+        /// [3C]
+        $fontSelections
+            .drop(while: { $0.first(where: { $0.isSelected }) == nil })
+            .sink { [weak self] selections in
+                guard let self else {
+                    return
+                }
+                guard let selection = selections.first(where: { $0.isSelected }) else {
+                    return
+                }
+                self.selectedFont = selection.font
+            }
+            .store(in: &subscriptions)
     }
     
     // MARK: Events
@@ -181,6 +231,12 @@ final class AppViewModel: ObservableObject {
                 .init(date: .init(), color: color, isSelected: true),
                 at: 0
             )
+        case .textFontColor:
+            deselectSelectedColor(for: .textFontColor)
+            fontColorSelection.insert(
+                .init(date: .init(), color: color, isSelected: true),
+                at: 0
+            )
         }
     }
     
@@ -204,6 +260,12 @@ final class AppViewModel: ObservableObject {
                 return
             }
             sheetItemBackgroundColorSelections[selectionIndex].isSelected = true
+        case .textFontColor:
+            deselectSelectedColor(for: .textFontColor)
+            guard let selectionIndex = fontColorSelection.firstIndex(where: { $0.date == date }) else {
+                return
+            }
+            fontColorSelection[selectionIndex].isSelected = true
         }
     }
     
@@ -215,7 +277,22 @@ final class AppViewModel: ObservableObject {
             sheetBackgroundColorSelections.indices.forEach { sheetBackgroundColorSelections[$0].isSelected = false }
         case .sheetItemBackground:
             sheetItemBackgroundColorSelections.indices.forEach { sheetItemBackgroundColorSelections[$0].isSelected = false }
+        case .textFontColor:
+            fontColorSelection.indices.forEach { fontColorSelection[$0].isSelected = false }
         }
+    }
+    
+    /// [3]
+    func selectFont(with date: Date) {
+        deselectSelectedFont()
+        guard let selectionIndex = fontSelections.firstIndex(where: { $0.date == date }) else {
+            return
+        }
+        fontSelections[selectionIndex].isSelected = true
+    }
+    
+    private func deselectSelectedFont() {
+        fontSelections.indices.forEach { fontSelections[$0].isSelected = false }
     }
     
 }

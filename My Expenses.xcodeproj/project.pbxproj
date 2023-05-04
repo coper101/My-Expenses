@@ -24,6 +24,13 @@
 		274014E629D97793003EF614 /* NoColorChipButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274014E529D97793003EF614 /* NoColorChipButtonView.swift */; };
 		274014E829D97C2C003EF614 /* BackgroundOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274014E729D97C2C003EF614 /* BackgroundOptionsView.swift */; };
 		274014EB29D97C64003EF614 /* HeaderOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274014EA29D97C64003EF614 /* HeaderOptionsView.swift */; };
+		27479F5A2A03613E00FDE1C6 /* TextOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27479F592A03613E00FDE1C6 /* TextOptionsView.swift */; };
+		27479F5F2A03692B00FDE1C6 /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27479F5C2A03692A00FDE1C6 /* SF-Pro-Text-Semibold.otf */; };
+		27479F602A03692B00FDE1C6 /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27479F5D2A03692B00FDE1C6 /* SF-Pro-Text-Bold.otf */; };
+		27479F612A03692B00FDE1C6 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27479F5E2A03692B00FDE1C6 /* SF-Pro-Text-Regular.otf */; };
+		27479F632A03693600FDE1C6 /* ShadowsIntoLight-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27479F622A03693600FDE1C6 /* ShadowsIntoLight-Regular.ttf */; };
+		27479F652A03693E00FDE1C6 /* Schoolbell-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27479F642A03693E00FDE1C6 /* Schoolbell-Regular.ttf */; };
+		27479F682A03699600FDE1C6 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27479F672A03699600FDE1C6 /* Fonts.swift */; };
 		2760488D29BDC0F000AB8497 /* My_Expenses.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2760488B29BDC0F000AB8497 /* My_Expenses.xcdatamodeld */; };
 		2760488F29BDE58800AB8497 /* TodaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2760488E29BDE58800AB8497 /* TodaysView.swift */; };
 		2760489329BDE5BA00AB8497 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2760489229BDE5BA00AB8497 /* WeekView.swift */; };
@@ -94,6 +101,14 @@
 		274014E529D97793003EF614 /* NoColorChipButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoColorChipButtonView.swift; sourceTree = "<group>"; };
 		274014E729D97C2C003EF614 /* BackgroundOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundOptionsView.swift; sourceTree = "<group>"; };
 		274014EA29D97C64003EF614 /* HeaderOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderOptionsView.swift; sourceTree = "<group>"; };
+		27479F592A03613E00FDE1C6 /* TextOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOptionsView.swift; sourceTree = "<group>"; };
+		27479F5C2A03692A00FDE1C6 /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
+		27479F5D2A03692B00FDE1C6 /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
+		27479F5E2A03692B00FDE1C6 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		27479F622A03693600FDE1C6 /* ShadowsIntoLight-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ShadowsIntoLight-Regular.ttf"; sourceTree = "<group>"; };
+		27479F642A03693E00FDE1C6 /* Schoolbell-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Schoolbell-Regular.ttf"; sourceTree = "<group>"; };
+		27479F662A03694B00FDE1C6 /* My-Expenses-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "My-Expenses-Info.plist"; sourceTree = SOURCE_ROOT; };
+		27479F672A03699600FDE1C6 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		2760488C29BDC0F000AB8497 /* My_Expenses.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = My_Expenses.xcdatamodel; sourceTree = "<group>"; };
 		2760488E29BDE58800AB8497 /* TodaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysView.swift; sourceTree = "<group>"; };
 		2760489229BDE5BA00AB8497 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
@@ -173,6 +188,7 @@
 			children = (
 				274014D129D7E651003EF614 /* Icons.swift */,
 				274014D329D7E6B5003EF614 /* Colors.swift */,
+				27479F672A03699600FDE1C6 /* Fonts.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -207,10 +223,23 @@
 			children = (
 				274014E729D97C2C003EF614 /* BackgroundOptionsView.swift */,
 				27A199FC29EA928B006775E5 /* SheetOptionsView.swift */,
+				27479F592A03613E00FDE1C6 /* TextOptionsView.swift */,
 				274014EA29D97C64003EF614 /* HeaderOptionsView.swift */,
 				27F8ABAA29E2B5E600D6B2DD /* ColorPickerDemo.swift */,
 			);
 			path = Options;
+			sourceTree = "<group>";
+		};
+		27479F5B2A03690700FDE1C6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				27479F642A03693E00FDE1C6 /* Schoolbell-Regular.ttf */,
+				27479F622A03693600FDE1C6 /* ShadowsIntoLight-Regular.ttf */,
+				27479F5D2A03692B00FDE1C6 /* SF-Pro-Text-Bold.otf */,
+				27479F5E2A03692B00FDE1C6 /* SF-Pro-Text-Regular.otf */,
+				27479F5C2A03692A00FDE1C6 /* SF-Pro-Text-Semibold.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		2760489629BDE7E000AB8497 /* Style */ = {
@@ -277,6 +306,7 @@
 		27A25A6129BDBAB200EC5E0D /* My Expenses */ = {
 			isa = PBXGroup;
 			children = (
+				27479F662A03694B00FDE1C6 /* My-Expenses-Info.plist */,
 				27A25A6D29BDBAB400EC5E0D /* My_Expenses.entitlements */,
 				27A25A9429BDBAF000EC5E0D /* App */,
 				2740145F29CDABC8003EF614 /* Components */,
@@ -323,6 +353,7 @@
 		27A25A9329BDBAC900EC5E0D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				27479F5B2A03690700FDE1C6 /* Fonts */,
 				27A25A6B29BDBAB400EC5E0D /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -474,7 +505,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27479F5F2A03692B00FDE1C6 /* SF-Pro-Text-Semibold.otf in Resources */,
+				27479F632A03693600FDE1C6 /* ShadowsIntoLight-Regular.ttf in Resources */,
+				27479F652A03693E00FDE1C6 /* Schoolbell-Regular.ttf in Resources */,
 				27A25A6C29BDBAB400EC5E0D /* Assets.xcassets in Resources */,
+				27479F612A03692B00FDE1C6 /* SF-Pro-Text-Regular.otf in Resources */,
+				27479F602A03692B00FDE1C6 /* SF-Pro-Text-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,8 +559,10 @@
 				274014DF29D97544003EF614 /* CircleChipButtonView.swift in Sources */,
 				2760489329BDE5BA00AB8497 /* WeekView.swift in Sources */,
 				27A25AA029BDBBFE00EC5E0D /* Logger.swift in Sources */,
+				27479F5A2A03613E00FDE1C6 /* TextOptionsView.swift in Sources */,
 				276048DC29BF244600AB8497 /* Test.swift in Sources */,
 				27F8ABAB29E2B5E600D6B2DD /* ColorPickerDemo.swift in Sources */,
+				27479F682A03699600FDE1C6 /* Fonts.swift in Sources */,
 				27F8ABBB29E6617100D6B2DD /* Dimensions.swift in Sources */,
 				273F5D6829C702EF00C91C24 /* InputNavigatorView.swift in Sources */,
 				276048D229BF13BA00AB8497 /* TopBarView.swift in Sources */,
@@ -705,6 +743,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "My-Expenses-Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -745,6 +784,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "My-Expenses-Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

@@ -20,7 +20,7 @@ struct SheetTabItemView: View {
                 .textStyle(
                     foregroundColor: .black,
                     colorOpacity: isActive ? 1 : 0.15,
-                    fontWeight: .semibold,
+                    font: .sfProTextBold,
                     size: 24
                 )
         } //: Button

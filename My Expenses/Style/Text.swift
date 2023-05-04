@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct CustomText: ViewModifier {
-    // MARK: - Properties
+    // MARK: - Props
     var foregroundColor: Color
-    var weight: Font.Weight
+    var font: Fonts
     var size: CGFloat
     var maxWidth: CGFloat?
     var alignment: Alignment
@@ -22,7 +22,7 @@ struct CustomText: ViewModifier {
     func body(content: Content) -> some View {
         content
             .foregroundColor(foregroundColor)
-            .font(.system(size: size, weight: weight, design: .default))
+            .font(Font.custom(font.value, size: size))
             .frame(
                 maxWidth: maxWidth,
                 alignment: alignment
@@ -39,7 +39,8 @@ extension View {
     ///
     /// - Parameters:
     ///   - foregroundColor: The color of the text
-    ///   - weight: The weight font e.g. "Arial-Bold"
+    ///   - colorOpacity: The opacity of the text color
+    ///   - font: The font of text
     ///   - size: The font size
     ///   - maxWidth: The text will fill all the available width of its parent
     ///   - alignment: The alignment of the text relative to its width
@@ -51,7 +52,7 @@ extension View {
     func textStyle(
         foregroundColor: Color = .gray,
         colorOpacity: Double = 1,
-        fontWeight: Font.Weight = .regular,
+        font: Fonts = .sfProTextRegular,
         size: CGFloat = 12,
         maxWidth: CGFloat? = nil,
         alignment: Alignment = .leading,
@@ -62,7 +63,7 @@ extension View {
         self.modifier(
             CustomText(
                 foregroundColor: foregroundColor.opacity(colorOpacity),
-                weight: fontWeight,
+                font: font,
                 size: size,
                 maxWidth: maxWidth,
                 alignment: alignment,

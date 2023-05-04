@@ -17,7 +17,7 @@ struct HeaderOptionsView: View {
             .textStyle(
                 foregroundColor: .black,
                 colorOpacity: 0.15,
-                fontWeight: .bold,
+                font: .sfProTextBold,
                 size: 13,
                 maxWidth: .infinity,
                 alignment: .leading

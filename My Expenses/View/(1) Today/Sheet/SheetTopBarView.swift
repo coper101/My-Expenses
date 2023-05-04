@@ -44,6 +44,7 @@ struct SheetTopBarView: View {
                         )
                     )
                     .frame(width: 44)
+                    .allowsHitTesting(false)
                 
             } //: ZStack
             .frame(height: 29)

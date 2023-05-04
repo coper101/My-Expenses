@@ -84,7 +84,7 @@ struct TabItemview: View {
                     .textStyle(
                         foregroundColor: .black,
                         colorOpacity: isSelected ? 1 : 0.1,
-                        fontWeight: .semibold,
+                        font: .sfProTextSemibold,
                         size: 18
                     )
                 

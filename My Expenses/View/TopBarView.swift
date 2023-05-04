@@ -98,9 +98,9 @@ struct NavBarItemView: View {
         Button(action: action) {
             Text(isActive ? "Done" : title)
                 .textStyle(
-                    foregroundColor: isActive ? .secondary : .black,
+                    foregroundColor: isActive ? .secondaryColor : .black,
                     colorOpacity: isActive ? 1 : 0.2,
-                    fontWeight: .semibold,
+                    font: .sfProTextSemibold,
                     size: 18
                 )
         } //: Button

@@ -37,8 +37,11 @@ struct SheetOptionsView: View {
                     HStack(spacing: 26) {
                         
                         // Color Picker
-                        ColorPicker("Background Color Picker", selection: $selectedPickerBgColor)
-                            .labelsHidden()
+                        ColorPicker(
+                            "Background Color Picker",
+                            selection: $selectedPickerBgColor
+                        )
+                        .labelsHidden()
                         
                         // Colors
                         ForEach(backgroundColorSelection, id: \.date) { selection in
@@ -64,14 +67,18 @@ struct SheetOptionsView: View {
                         
                         // None
                         NoColorChipButtonView(
-                            isActive: itemBackgroundColorSelection.isEmpty || selectedItemBackgroundColor == .clear
+                            isActive: itemBackgroundColorSelection.isEmpty ||
+                            selectedItemBackgroundColor == .clear
                         ) {
                             selectedItemBackgroundColor = .clear
                         }
                         
                         // Color Picker
-                        ColorPicker("Item Background Color Picker", selection: $selectedPickerItemBgColor)
-                            .labelsHidden()
+                        ColorPicker(
+                            "Item Background Color Picker",
+                            selection: $selectedPickerItemBgColor
+                        )
+                        .labelsHidden()
                         
                         // Colors
                         ForEach(itemBackgroundColorSelection, id: \.date) { selection in

@@ -13,6 +13,7 @@ extension Double {
     func formatTo(dp: Int) -> String {
         String(format: "%.\(dp)f", self)
     }
+    
 }
 
 func getTotalPrice(items: [any ExpenseType]) -> String {

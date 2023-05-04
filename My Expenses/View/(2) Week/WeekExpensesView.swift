@@ -43,7 +43,7 @@ struct WeekExpensesView: View {
             Text(viewModel.header)
                 .textStyle(
                     foregroundColor: .black,
-                    fontWeight: .semibold,
+                    font: .sfProTextSemibold,
                     size: 24
                 )
                 .fillMaxWidth(alignment: .leading)

@@ -74,7 +74,19 @@ struct CustomizeSheetView: View {
                             pickItemBackgroundColorAction: pickItemBackgroundColorAction
                         )
                     case .text:
-                        Text("TODO")
+                        TextOptionsView(
+                            /// Font Color
+                            selectedFontColor: $appViewModel.selectedFontColor,
+                            fontColorSelection: appViewModel.fontColorSelection,
+                            selectedFontColorAction: selectedFontColorAction,
+                            pickFontColorAction: pickFontColorAction,
+                            /// Font Size
+                            fontSize: $appViewModel.fontSize,
+                            /// Font
+                            selectedFont: $appViewModel.selectedFont,
+                            fontSelection: appViewModel.fontSelections,
+                            selectedFontAction: selectedFontAction
+                        )
                     case .appIcon:
                         Text("TODO")
                     }
@@ -124,6 +136,19 @@ struct CustomizeSheetView: View {
     
     func selectedItemBackgroundColorAction(date: Date) {
         appViewModel.selectColor(with: date, for: .sheetItemBackground)
+    }
+    
+    /// [3] Text Option
+    func pickFontColorAction(color: Color) {
+        appViewModel.addColor(color, for: .textFontColor)
+    }
+    
+    func selectedFontColorAction(date: Date) {
+        appViewModel.selectColor(with: date, for: .textFontColor)
+    }
+    
+    func selectedFontAction(date: Date) {
+        appViewModel.selectFont(with: date)
     }
     
 }

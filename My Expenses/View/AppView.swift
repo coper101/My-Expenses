@@ -75,6 +75,7 @@ struct AppView: View {
                 // MARK: Bottom Bar
                 if appViewModel.isNewItemFocused {
                     NewItemInputView(
+                        font: appViewModel.selectedFont,
                         isFocused: $appViewModel.isNewItemFocused,
                         commitAction: newItemAction
                     )

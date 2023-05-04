@@ -70,14 +70,14 @@ struct DayExpenseBoxView: View {
                 .textStyle(
                     foregroundColor: .black,
                     colorOpacity: 0.2,
-                    fontWeight: .semibold,
+                    font: .sfProTextSemibold,
                     size: 18
                 )
             
             Text(viewModel.totalPrice)
                 .textStyle(
                     foregroundColor: .black,
-                    fontWeight: .semibold,
+                    font: .sfProTextSemibold,
                     size: 18
                 )
             
@@ -85,7 +85,7 @@ struct DayExpenseBoxView: View {
                 .textStyle(
                     foregroundColor: .black,
                     colorOpacity: 0.2,
-                    fontWeight: .semibold,
+                    font: .sfProTextSemibold,
                     size: 12
                 )
             

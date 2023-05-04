@@ -10,6 +10,7 @@ import SwiftUI
 struct InputNavigatorView: View {
     // MARK: - Props
     @State private var text: String = ""
+    var font: Fonts
     var enterItemAction: Action
     var scribbleAction: Action
     
@@ -23,7 +24,7 @@ struct InputNavigatorView: View {
                     .textStyle(
                         foregroundColor: .black,
                         colorOpacity: 0.2,
-                        fontWeight: .semibold,
+                        font: font,
                         size: 15
                     )
             }
@@ -36,7 +37,7 @@ struct InputNavigatorView: View {
                     .textStyle(
                         foregroundColor: .black,
                         colorOpacity: 0.1,
-                        fontWeight: .semibold,
+                        font: font,
                         size: 15
                     )
             }
@@ -51,6 +52,7 @@ struct InputNavigatorView: View {
 struct NewExpenseInputView_Previews: PreviewProvider {
     static var previews: some View {
         InputNavigatorView(
+            font: .sfProTextSemibold,
             enterItemAction: {},
             scribbleAction: {}
         )
